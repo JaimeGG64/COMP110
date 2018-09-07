@@ -6,20 +6,19 @@
 class FarenheitToCelcius {
     public static void main(String[] args) {
         //Number Values
-        int farenheitValue = 20;
-        final float five  = 5;
-        final float nine = 9;
-        final float thirtyTwo = 32;
-        float farenheitToCelciusValue = (((farenheitValue - thirtyTwo)*five)/nine);
+        int farenheitValue = 50;
+        final double pointFive  = 0.5555;
+        final int thirtyTwo = 32;
+        double farenheitToCelciusValue = (farenheitValue - thirtyTwo) * pointFive;
 
         //Special Characters
-        char degree = '\u00B0';
+        char degreeSymbol = '\u00B0';
 
         //Messages
-        String farenheitMessage = degree + "F";
-        String celciusMessage = degree + "C";
+        String farenheitMessage = Double.toString(farenheitValue) + degreeSymbol + "F";
+        String farenheitToCelciusMessage = Double.toString(farenheitToCelciusValue) + degreeSymbol + "C";
         
         //Print Statements
-        System.out.println(farenheitValue + farenheitMessage + " is " + farenheitToCelciusValue + celciusMessage);
+        System.out.println(farenheitMessage + " is " + farenheitToCelciusMessage);
     }
 }
