@@ -1,5 +1,3 @@
-import java.io.Console;
-
 //Name: Jaime Garcia Garcia
 //Date: 08-25-2018
 //Application: Date Types and Operators
