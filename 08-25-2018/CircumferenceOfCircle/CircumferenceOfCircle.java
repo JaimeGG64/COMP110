@@ -1,7 +1,7 @@
 //Name: Jaime Garcia Garcia
 //Date: 08-25-2018
 //Application: Circumference of a Circle
-//Purpose: The Application use escape character to print the following message
+//Purpose: The application calculates the circumference of a circle base off the given radius.
 
 class CircumferenceOfCircle {
     public static void main(String[] args) {
