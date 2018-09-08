@@ -1,22 +1,22 @@
 //Name: Jaime Garcia Garcia
 //Date: 08-25-2018
-//Application: Circumference of a Circle
-//Purpose: The Application use escape character to print the following message
+//Application: Farenheit to Celcius
+//Purpose: The application will convert farenheit to celcius
 
 class FarenheitToCelcius {
     public static void main(String[] args) {
         //Number Values
-        int farenheitValue = 50;
-        final double pointFive  = 0.5555;
+        int farenheitValue = 70;
+        final float nineOverEight  = 9/5F;
         final int thirtyTwo = 32;
-        double farenheitToCelciusValue = (farenheitValue - thirtyTwo) * pointFive;
+        float farenheitToCelciusValue = (farenheitValue - thirtyTwo) / nineOverEight;
 
         //Special Characters
         char degreeSymbol = '\u00B0';
 
         //Messages
-        String farenheitMessage = Double.toString(farenheitValue) + degreeSymbol + "F";
-        String farenheitToCelciusMessage = Double.toString(farenheitToCelciusValue) + degreeSymbol + "C";
+        String farenheitMessage = Integer.toString(farenheitValue) + degreeSymbol + "F";
+        String farenheitToCelciusMessage = Float.toString(farenheitToCelciusValue) + degreeSymbol + "C";
         
         //Print Statements
         System.out.println(farenheitMessage + " is " + farenheitToCelciusMessage);
