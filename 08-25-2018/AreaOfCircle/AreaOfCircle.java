@@ -1,7 +1,7 @@
 //Name: Jaime Garcia Garcia
 //Date: 08-25-2018
 //Application: Area of a Circle
-//Purpose: The Application use escape character to print the following message
+//Purpose: The Application will calculate the area of a circle
 
 class AreaOfCircle {
     public static void main(String[] args) {
