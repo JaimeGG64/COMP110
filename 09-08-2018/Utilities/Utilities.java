@@ -25,23 +25,38 @@ o	Use the following methods (see last slide for examples)
 class Utilities {
     public static void main(String[] args) {
         //Demo String
-        String myWord = "blueberry";
-        System.out.println("The word is: " + myWord + ".");
-        String letterChecker = "e";
-        if(myWord.endsWith(letterChecker)) {
-            System.out.println("The word " + myWord + " ends with " + letterChecker + ".");
-        }
-        else {
-            System.out.println("The word " + myWord + " does not end with " + letterChecker + ".");
-        }
-        int lengthOfWord = myWord.length();
-        System.out.println("The word has " + Integer.toString(lengthOfWord) + " letters.");
-        String upperCaseWord = myWord.toUpperCase();
-        System.out.println(upperCaseWord + " is another way to spell " + myWord + ".");
+        // String myWord = "blueberry";
+        // System.out.println("The word is: " + myWord + ".");
+        // String letterChecker = "e";
+        // if(myWord.endsWith(letterChecker)) {
+        //     System.out.println("The word " + myWord + " ends with " + letterChecker + ".");
+        // }
+        // else {
+        //     System.out.println("The word " + myWord + " does not end with " + letterChecker + ".");
+        // }
+        // int lengthOfWord = myWord.length();
+        // System.out.println("The word has " + Integer.toString(lengthOfWord) + " letters.");
+        // String upperCaseWord = myWord.toUpperCase();
+        // System.out.println(upperCaseWord + " is another way to spell " + myWord + ".");
         
         //Demo Math
-        // double sinOfX = Math.sin(1);
-        // System.out.print(sinOfX);
+        double sqrtRootInput = 9;
+        double sqrtRootOutput = Math.sqrt(sqrtRootInput);
+        final double PI = Math.PI;
+        double PIOverTwo = (PI/2);
+        double sineOutput = Math.sin(PIOverTwo);
+        double baseInput = 3;
+        double exponentInput = 4;
+        double powerEquationOutput = Math.pow(baseInput,exponentInput);
+        char sqrtRootSymbol = '\u221a';
+        char equalSymbol = '\u003d';
+        // char PISymbol = '\u03c0';
+        String sqrtRootOutputMessage = sqrtRootSymbol + "(" + sqrtRootInput + ")" + equalSymbol +  Double.toString(sqrtRootOutput);
+        String triIdentitiesOutputMessage = "sin(" + PIOverTwo + ")" + equalSymbol + Double.toString(sineOutput);
+        String powerEquationOutputMessage = Double.toString(baseInput) + "^(" + Double.toString(exponentInput) + ")" + equalSymbol + Double.toString(powerEquationOutput);
+        System.out.println(sqrtRootOutputMessage);
+        System.out.println(triIdentitiesOutputMessage);
+        System.out.println(powerEquationOutputMessage);
         
         //Demo Scanner
         // int input = 0;
