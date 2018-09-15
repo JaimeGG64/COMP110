@@ -19,55 +19,84 @@ o	Use the following methods (see last slide for examples)
 
 */
 
-// import java.util.Scanner;
+import java.util.Scanner;
 // import javax.swing.JOptionPane;
 
 class Utilities {
     public static void main(String[] args) {
-        //Demo String
-        // String myWord = "blueberry";
-        // System.out.println("The word is: " + myWord + ".");
-        // String letterChecker = "e";
-        // if(myWord.endsWith(letterChecker)) {
-        //     System.out.println("The word " + myWord + " ends with " + letterChecker + ".");
-        // }
-        // else {
-        //     System.out.println("The word " + myWord + " does not end with " + letterChecker + ".");
-        // }
-        // int lengthOfWord = myWord.length();
-        // System.out.println("The word has " + Integer.toString(lengthOfWord) + " letters.");
-        // String upperCaseWord = myWord.toUpperCase();
-        // System.out.println(upperCaseWord + " is another way to spell " + myWord + ".");
-        
-        //Demo Math
-        double sqrtRootInput = 9;
-        double sqrtRootOutput = Math.sqrt(sqrtRootInput);
-        final double PI = Math.PI;
-        double PIOverTwo = (PI/2);
-        double sineOutput = Math.sin(PIOverTwo);
-        double baseInput = 3;
-        double exponentInput = 4;
-        double powerEquationOutput = Math.pow(baseInput,exponentInput);
-        char sqrtRootSymbol = '\u221a';
-        char equalSymbol = '\u003d';
-        // char PISymbol = '\u03c0';
-        String sqrtRootOutputMessage = sqrtRootSymbol + "(" + sqrtRootInput + ")" + equalSymbol +  Double.toString(sqrtRootOutput);
-        String triIdentitiesOutputMessage = "sin(" + PIOverTwo + ")" + equalSymbol + Double.toString(sineOutput);
-        String powerEquationOutputMessage = Double.toString(baseInput) + "^(" + Double.toString(exponentInput) + ")" + equalSymbol + Double.toString(powerEquationOutput);
-        System.out.println(sqrtRootOutputMessage);
-        System.out.println(triIdentitiesOutputMessage);
-        System.out.println(powerEquationOutputMessage);
-        
-        //Demo Scanner
-        // int input = 0;
-        // Scanner myScanner = new Scanner (System.in);
+    //Global Data Types
+    char equalSymbol = '\u003d';
+    char sqrtRootSymbol = '\u221a';
+    int integerInput = 0;
+    String stringInput = "";
+    boolean booleanInput = false;
 
-        // System.out.println("Please enter a value");
-        // input = myScanner.nextInt();
+    // String Input - 1
+    Scanner userInputScanner = new Scanner (System.in); 
+    System.out.println("Please enter a word");
 
-        // System.out.println("You entered: " + input);
+    stringInput = userInputScanner.next();
+    System.out.println("You entered: " + stringInput);     
+    
+    //Letter Checker
+    String letterToCheck = "e";
+    boolean letterChecker = stringInput.endsWith(letterToCheck);
+    if(letterChecker) {
+        String endWithEMessage = "The word " + stringInput + " ends with " + letterToCheck + ".";
+        System.out.println(endWithEMessage);
+    }
+    else {
+        String doesNotEndWithEMessage = "The word " + stringInput + " does not end with " + letterToCheck + ".";
+        System.out.println(doesNotEndWithEMessage);
+    }
 
-        // myScanner.close();
+    //Letter Counter
+    int lengthOfWord = stringInput.length();
+    String lengthOfWordMessage = "The word has " + Integer.toString(lengthOfWord) + " letters.";
+    System.out.println(lengthOfWordMessage);
+    
+    //Uppercase Transform
+    String upperCaseWord = stringInput.toUpperCase();
+    String upperCaseWordMessage = "Here " + upperCaseWord + " in uppercase";
+    System.out.println(upperCaseWordMessage);
+    
+    // Int Input - 2
+    System.out.println("Please enter a value");
+    integerInput = userInputScanner.nextInt();
+    System.out.println("You entered: " + integerInput);
+    double intToDoubleConvert = integerInput;
+
+    //Square Root
+    double sqrtRootOutput = Math.sqrt(intToDoubleConvert);
+    String sqrtRootOutputMessage = sqrtRootSymbol + "(" + Double.toString(intToDoubleConvert) + ")" + equalSymbol +  Double.toString(sqrtRootOutput);
+    System.out.println(sqrtRootOutputMessage);
+
+    //Sine 
+    double sineOutput = Math.sin(intToDoubleConvert);
+    String sinIdentitiesOutputMessage = "sin(" + Double.toString(integerInput) + ")" + equalSymbol + Double.toString(sineOutput);
+    System.out.println(sinIdentitiesOutputMessage);
+
+    //Square
+    final double squareExponent = 2;
+    double powerEquationOutput = Math.pow(intToDoubleConvert,squareExponent);
+    String powerEquationOutputMessage = Double.toString(intToDoubleConvert) + "^(" + Double.toString(squareExponent) + ")" + equalSymbol + Double.toString(powerEquationOutput);
+    System.out.println(powerEquationOutputMessage);
+
+    System.out.println("Did you have a good morning? Type true or false.");
+
+    //Boolean Input - 3
+    booleanInput = userInputScanner.nextBoolean();
+
+    System.out.println("You entered: " + booleanInput);
+
+    if(booleanInput) {
+        System.out.println("Congratulations!!!");
+    }
+    else {
+        System.out.println("Sorry to hear that.");
+    }
+    
+    userInputScanner.close();
 
         //Demo JOptionPane
         // JOptionPane.showMessageDialog(null, "This is so cool");
