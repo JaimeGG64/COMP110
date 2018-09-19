@@ -15,6 +15,7 @@ class Utilities {
         String stringInput = "";
         boolean booleanInput = false;
 
+
         // String Input - 1
         Scanner userInputScanner = new Scanner (System.in); 
         System.out.println("Please enter a word");
