@@ -1,7 +1,7 @@
 //Name: Jaime Garcia Garcia
 //Date: 09-15-2018
-//Application: Collection of Methods
-//Purpose: The application has a series of a methods that calculate the area/circumference of a circle, convert beteen fahrenheit and celsius, and has the quadatic formula
+//Application: Selection
+//Purpose: The application has a series of a if statmenets
 class Selection {
     //A - If Statment
     public static void AifCheckExample(boolean hasCard, double money) {
@@ -39,18 +39,18 @@ class Selection {
             System.out.println("Pokemon can be found in any region");
         }
         else if (pokedexNumber < 251) {
-            System.out.print("Pokemon can be found in Kanto and Johto");
+            System.out.println("Pokemon can be found in Kanto and Johto");
         }
         else if (pokedexNumber <= 151) {
-            System.out.print("Pokemon can only be found in Kanto");
+            System.out.println("Pokemon can only be found in Kanto");
         }
         else {
-            System.out.print("Pokemon might be nonexistent");
+            System.out.println("Pokemon might be nonexistent");
         }
     }
 
     //E - Nested If
-    // public static void ENestedIfExample() {
+    // public static void ENestedIfExample(String username, String password) {
     //     if(username.equalTo("Jim101")) {
     //         if(password.equalTo("password1")) {
     //             System.out.println("Welcome");
@@ -88,10 +88,20 @@ class Selection {
         System.out.println("Is " + word + " more than 5 characters? " + val);
         
         AifCheckExample(true, 20);
+        AifCheckExample(false, 10);
+
+        BifElseCheckExample(true, 25);
         BifElseCheckExample(false, 15);
         // CifElseIfElseCheckExample(false, 2);
+        
+        DifElseIfElseIfElseCheckExample(5000);
         DifElseIfElseIfElseCheckExample(345);
+        DifElseIfElseIfElseCheckExample(200);
+        DifElseIfElseIfElseCheckExample(3);
 
         switchCaseExample(1);
+        switchCaseExample(2000);
+        switchCaseExample(2048);
+        switchCaseExample(3000);
     }
 }

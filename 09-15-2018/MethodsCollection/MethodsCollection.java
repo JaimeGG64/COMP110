@@ -23,9 +23,12 @@ class MethodsCollection {
         return fahrenheitToCelsius;
     }
 
-    static double getQuadraticFormula(double squareCoefficient, double singleCofficient, double constantNumber) {
+    static void getQuadraticFormula(double squareCoefficient, double singleCofficient, double constantNumber) {
+        System.out.println("The Quadratic Formula give the following output:");
         double quadraticFormulaPositiveOutput = (-(singleCofficient) + Math.sqrt(Math.pow(singleCofficient,2) - (4 * squareCoefficient * constantNumber)))/(2 * squareCoefficient);
-        return quadraticFormulaPositiveOutput;
+        System.out.println("Postive Root:" + quadraticFormulaPositiveOutput);
+        double quadraticNegativeOutput = (-(singleCofficient) - Math.sqrt(Math.pow(singleCofficient,2) - (4 * squareCoefficient * constantNumber)))/(2 * squareCoefficient);
+        System.out.println("Negative Root:" + quadraticNegativeOutput);
     }
 
     public static void main(String[] args) {
@@ -58,6 +61,9 @@ class MethodsCollection {
         System.out.println(CircumferenceOfCircleMessage);
         System.out.println(CelsiusToFahrenheitMessage);
         System.out.println(FahrenheitToCelsiusMessage);
-        System.out.println();
+        
+        getQuadraticFormula(-3, 5, 10);
+        getQuadraticFormula(3, 3, -5);
+        getQuadraticFormula(7, 3, 0);
     }
 }
