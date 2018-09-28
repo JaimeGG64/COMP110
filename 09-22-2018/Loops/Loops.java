@@ -29,9 +29,18 @@ class Loops {
         while (i < 60) {
             char ASCIILoop = (char)i;
             System.out.println("ASCII Number " + i + " - " + ASCIILoop);
-
             i++;
         }
+    }
+
+    static void getASCIICharactersViaDoWhileLoop() {
+        System.out.println("Do While Loop");
+        int i = 33;
+        do {
+            char ASCIILoop = (char)i;
+            System.out.println("ASCII Number " + i + " - " + ASCIILoop);
+            i++;
+        } while(i < 80);
     }
 
     public static void main(String[] args) {
@@ -42,17 +51,21 @@ class Loops {
         
         Scanner userInputScanner = new Scanner(System.in);
 
-        int forLoopSelection = userInputScanner.nextInt();
-        // if( userInput == 3) {}
-        if (forLoopSelection == 2) {
+        int loopSelection = userInputScanner.nextInt();
+        if (loopSelection == 3) {
+            getASCIICharactersViaDoWhileLoop();
+        }
+        else if (loopSelection == 2) {
             getASCIICharactersViaForWhileLoop();
         }
-        else if (forLoopSelection == 1) {
+        else if (loopSelection == 1) {
             getASCIICharactersViaForLoop();
         }
-        else if (forLoopSelection == 0) {
+        else if (loopSelection == 0) {
             userInputScanner.close();
         }
-        // else {}
+        else {
+            System.out.print("please enter a valid input.");
+        }
     }
 }
