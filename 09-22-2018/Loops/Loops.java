@@ -9,7 +9,6 @@ Any other number is invalid (repeat asking the user for input)
 Once the user enters a valid loop options (1-3)
 Then the application shall ask for a start character Dec. #33-126 (see ASCII table)
 Print all the characters from start to finish (last character shall always be Dec. #126)
-
 */
 
 import java.util.Scanner;
@@ -45,27 +44,28 @@ class Loops {
 
     public static void main(String[] args) {
 
-        String welcomeMessage = "Please Enter a number \n 0 - Close Program \n 1 - use a for loop \n 2 - use a while loop \n 3 - use a do/while loop \n";
-
-        System.out.print(welcomeMessage);
-        
         Scanner userInputScanner = new Scanner(System.in);
 
-        int loopSelection = userInputScanner.nextInt();
-        if (loopSelection == 3) {
-            getASCIICharactersViaDoWhileLoop();
+        do {
+            String welcomeMessage = "Please Enter a number \n 0 - Close Program \n 1 - use a for loop \n 2 - use a while loop \n 3 - use a do/while loop";
+        System.out.println(welcomeMessage);
+            int loopSelection = userInputScanner.nextInt();
+            if (loopSelection == 3) {
+                getASCIICharactersViaDoWhileLoop();
+            }
+            else if (loopSelection == 2) {
+                getASCIICharactersViaForWhileLoop();
+            }
+            else if (loopSelection == 1) {
+                getASCIICharactersViaForLoop();
+            }
+            else if (loopSelection == 0) {
+                userInputScanner.close();
+            }
+            else {
+                System.out.println("please enter a valid input.");
+            }
         }
-        else if (loopSelection == 2) {
-            getASCIICharactersViaForWhileLoop();
-        }
-        else if (loopSelection == 1) {
-            getASCIICharactersViaForLoop();
-        }
-        else if (loopSelection == 0) {
-            userInputScanner.close();
-        }
-        else {
-            System.out.print("please enter a valid input.");
-        }
+        while(true);
     }
 }
