@@ -15,31 +15,34 @@ import java.util.Scanner;
 
 class Loops {
     static void getASCIICharactersViaForLoop() {
-        System.out.println("For Loop");
-        for (int i = 33; i < 110; i++) {
+        System.out.println("--- For Loop ---");
+        for (int i = 33; i <= 126; i++) {
             char ASCIILoop = (char)i;
             System.out.println("ASCII Number " + i + " - " + ASCIILoop);
         }
+        System.out.println("--- End For Loop ---");
     }
 
     static void getASCIICharactersViaForWhileLoop() {
-        System.out.println("While Loop");
+        System.out.println("--- While Loop ---");
         int i = 33;
-        while (i < 60) {
+        while (i <= 126) {
             char ASCIILoop = (char)i;
             System.out.println("ASCII Number " + i + " - " + ASCIILoop);
             i++;
         }
+        System.out.println("--- End While Loop ---");
     }
 
     static void getASCIICharactersViaDoWhileLoop() {
-        System.out.println("Do While Loop");
+        System.out.println("--- Do While Loop ---");
         int i = 33;
         do {
             char ASCIILoop = (char)i;
             System.out.println("ASCII Number " + i + " - " + ASCIILoop);
             i++;
-        } while(i < 80);
+        } while(i <= 126);
+        System.out.println("--- End Do While Loop ---");
     }
 
     public static void main(String[] args) {
@@ -65,7 +68,7 @@ class Loops {
             }
             
             else if(loopSelection != 0) {
-                System.out.println("please enter a valid input.");
+                System.out.println("Please enter a valid number.");
             }
         }
         while(loopSelection != 0);
