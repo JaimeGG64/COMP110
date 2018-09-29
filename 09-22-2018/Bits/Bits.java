@@ -64,7 +64,7 @@ public class Bits {
     String resultRightShiftStr = String.format(Integer.toBinaryString(resultRightShift));
     JOptionPane.showMessageDialog(null, intRightShiftOne +" >> " + intRightShiftTwo + " = " + resultRightShiftStr + "\n");
 
-    /* The >> Operator (Bitwise Right Shift)
+    /* The << Operator (Bitwise Left Shift)
     
     */
     int intLeftShiftOne = 25;
@@ -73,7 +73,7 @@ public class Bits {
     String resultLeftShiftStr = String.format(Integer.toBinaryString(resultLeftShift));
     JOptionPane.showMessageDialog(null, intLeftShiftOne +" >> " + intLeftShiftTwo + " = " + resultLeftShiftStr + "\n");
 
-    /* The >> Operator (Bitwise Right Shift)
+    /* The >>> Operator (Bitwise Zero Right Shift)
     
     */
     int intZeroFillRightShiftOne = 56;
