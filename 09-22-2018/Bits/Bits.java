@@ -1,3 +1,8 @@
+//Name: Jaime Garcia Garcia
+//Date: 09-22-2018
+//Application: Bits
+//Purpose: The application demo bitwise Operators
+
 import javax.swing.JOptionPane;
 
 public class Bits {
