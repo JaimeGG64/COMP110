@@ -43,29 +43,32 @@ class Loops {
     }
 
     public static void main(String[] args) {
-
+        // Setting Up
         Scanner userInputScanner = new Scanner(System.in);
-
+        String welcomeMessage = "Please Enter a number \n 0 - Close Program \n 1 - use a for loop \n 2 - use a while loop \n 3 - use a do/while loop";
+        int loopSelection;
+        
         do {
-            String welcomeMessage = "Please Enter a number \n 0 - Close Program \n 1 - use a for loop \n 2 - use a while loop \n 3 - use a do/while loop";
-        System.out.println(welcomeMessage);
-            int loopSelection = userInputScanner.nextInt();
+            System.out.println(welcomeMessage);
+            loopSelection = Integer.parseInt(userInputScanner.nextLine());
+            
             if (loopSelection == 3) {
                 getASCIICharactersViaDoWhileLoop();
             }
+            
             else if (loopSelection == 2) {
                 getASCIICharactersViaForWhileLoop();
             }
+            
             else if (loopSelection == 1) {
                 getASCIICharactersViaForLoop();
             }
-            else if (loopSelection == 0) {
-                userInputScanner.close();
-            }
-            else {
+            
+            else if(loopSelection != 0) {
                 System.out.println("please enter a valid input.");
             }
         }
-        while(true);
+        while(loopSelection != 0);
+        userInputScanner.close();
     }
 }
