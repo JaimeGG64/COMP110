@@ -54,13 +54,32 @@ public class Bits {
     int resultInv = ~(intInvOne);
     String resultInvStr = String.format("%32s", Integer.toBinaryString(resultInv)).replace(' ', '0');
     JOptionPane.showMessageDialog(null, "~ " + Integer.toString(intInvOne) + " = " + Integer.toString(resultInv) + "\n" + resultInvStr);
-    }
+    
+    /* The >> Operator (Bitwise Right Shift)
+    
+    */
+    int intRightShiftOne = 56;
+    int intRightShiftTwo = 4;
+    int resultRightShift = intRightShiftOne >> intRightShiftTwo;
+    String resultRightShiftStr = String.format(Integer.toBinaryString(resultRightShift));
+    JOptionPane.showMessageDialog(null, intRightShiftOne +" >> " + intRightShiftTwo + " = " + resultRightShiftStr + "\n");
 
     /* The >> Operator (Bitwise Right Shift)
     
     */
-    // int intRightShift = 56;
-    // int resultRightShift = intRightShift >> 4;
-    // String resultRightShiftStr = String.format(Integer.toBinaryString(resultRightShift));
-    // System.out.println( ">> " + intRightShift + " = " + resultRightShiftStr + "\n");
+    int intLeftShiftOne = 25;
+    int intLeftShiftTwo = 2;
+    int resultLeftShift = intLeftShiftOne << intLeftShiftTwo;
+    String resultLeftShiftStr = String.format(Integer.toBinaryString(resultLeftShift));
+    JOptionPane.showMessageDialog(null, intLeftShiftOne +" >> " + intLeftShiftTwo + " = " + resultLeftShiftStr + "\n");
+
+    /* The >> Operator (Bitwise Right Shift)
+    
+    */
+    int intZeroFillRightShiftOne = 56;
+    int intZeroFillRightShiftTwo = 3;
+    int resultZeroFillRightShift = intZeroFillRightShiftOne >>> intZeroFillRightShiftTwo;
+    String resultZeroFillRightShiftStr = String.format(Integer.toBinaryString(resultZeroFillRightShift));
+    JOptionPane.showMessageDialog(null, intZeroFillRightShiftOne +" >> " + intZeroFillRightShiftTwo + " = " + resultZeroFillRightShiftStr + "\n");
+    }
 }
