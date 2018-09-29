@@ -1,3 +1,7 @@
+//Name: Jaime Garcia Garcia
+//Date: 09-22-2018
+//Application: Loops
+//Purpose: The application demos the different loops
 /*
 Application shall run forever
 The following options shall be available to the user
@@ -14,19 +18,19 @@ Print all the characters from start to finish (last character shall always be De
 import java.util.Scanner;
 
 class Loops {
-    static void getASCIICharactersViaForLoop() {
+    static void getASCIICharactersViaForLoop(int startingNumber) {
         System.out.println("--- For Loop ---");
-        for (int i = 33; i <= 126; i++) {
+        for (int i = startingNumber; i <= 126 && i > 33; i++) {
             char ASCIILoop = (char)i;
             System.out.println("ASCII Number " + i + " - " + ASCIILoop);
         }
         System.out.println("--- End For Loop ---");
     }
 
-    static void getASCIICharactersViaForWhileLoop() {
+    static void getASCIICharactersViaForWhileLoop(int startingNumber) {
         System.out.println("--- While Loop ---");
-        int i = 33;
-        while (i <= 126) {
+        int i = startingNumber;
+        while (i <= 126 && i > 33) {
             char ASCIILoop = (char)i;
             System.out.println("ASCII Number " + i + " - " + ASCIILoop);
             i++;
@@ -34,14 +38,14 @@ class Loops {
         System.out.println("--- End While Loop ---");
     }
 
-    static void getASCIICharactersViaDoWhileLoop() {
+    static void getASCIICharactersViaDoWhileLoop(int startingNumber) {
         System.out.println("--- Do While Loop ---");
-        int i = 33;
+        int i = startingNumber;
         do {
             char ASCIILoop = (char)i;
             System.out.println("ASCII Number " + i + " - " + ASCIILoop);
             i++;
-        } while(i <= 126);
+        } while(i <= 126 && i > 33);
         System.out.println("--- End Do While Loop ---");
     }
 
@@ -49,24 +53,35 @@ class Loops {
         // Setting Up
         Scanner userInputScanner = new Scanner(System.in);
         String welcomeMessage = "Please Enter a number \n 0 - Close Program \n 1 - use a for loop \n 2 - use a while loop \n 3 - use a do/while loop";
-        int loopSelection;
+        String numberRangeMessage = "Select a number between 33-126";
+        int loopSelection, numberRangeSelection;
         
         do {
             System.out.println(welcomeMessage);
             loopSelection = Integer.parseInt(userInputScanner.nextLine());
             
-            if (loopSelection == 3) {
-                getASCIICharactersViaDoWhileLoop();
+            //For Loop Selection
+            if (loopSelection == 1) {
+                System.out.println(numberRangeMessage);
+                numberRangeSelection = Integer.parseInt(userInputScanner.nextLine());
+                getASCIICharactersViaForLoop(numberRangeSelection);
             }
             
+            //While Loop Selection
             else if (loopSelection == 2) {
-                getASCIICharactersViaForWhileLoop();
+                System.out.println(numberRangeMessage);
+                numberRangeSelection = Integer.parseInt(userInputScanner.nextLine());
+                getASCIICharactersViaForWhileLoop(numberRangeSelection);
             }
             
-            else if (loopSelection == 1) {
-                getASCIICharactersViaForLoop();
+            //Do While Selection
+            else if (loopSelection == 3) {
+                System.out.println(numberRangeMessage);
+                numberRangeSelection = Integer.parseInt(userInputScanner.nextLine());
+                getASCIICharactersViaDoWhileLoop(numberRangeSelection);
             }
             
+            //Invalid Input
             else if(loopSelection != 0) {
                 System.out.println("Please enter a valid number.");
             }
