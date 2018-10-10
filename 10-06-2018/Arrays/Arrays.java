@@ -17,19 +17,33 @@ class Arrays{
         return sum;
     }
 
+    public static int maxValueInArray(int[] a){
+        int max = 0;
+        for(int i = 1; i < a.length; i++){
+            if (a[i] > max){
+                max = a[i]; 
+            }
+        }
+        return max;
+    }
+
     public static void main(String[] args){
         int[] intArray = new int[6];
 
-        intArray[0] = 45;
+        intArray[0] = 0;
         intArray[1] = 2;
         intArray[2] = 54;
         intArray[3] = 22;
-        intArray[4] = 24;
+        intArray[4] = 125;
         intArray[5] = 8;
 
         System.out.println(intArray[3]);
 
         int sumnum = sumOfArray(intArray);
+
+        int maxInt = maxValueInArray(intArray);
+
         System.out.println(sumnum);
+        System.out.println(maxInt);
     }
 }
