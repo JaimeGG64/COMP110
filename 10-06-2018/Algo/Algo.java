@@ -27,28 +27,39 @@ class Algo{
         return input2;
     }
 
-    public static boolean isOdd(int input){
-        if(input % 2 != 0){
+    public static boolean isOdd(int number){
+        if(number % 2 != 0){
             return true;
         }
         return false;
     }
 
-    public static boolean isEven(int input){
-        if(input % 2 == 0){
+    public static boolean isEven(int number){
+        if(number % 2 == 0){
             return true;
         }
         return false;
     }
 
-    public static boolean isPalindrome(String Word){
+    public static boolean isPalindrome(String word){
+        int begin = 0;
+        int end = word.length() - 1;
+        while(begin < end) {
+            if(word.charAt(begin) != word.charAt(end)) {
+                return false;
+            }
+            begin++;
+            end--;
+        }
         return true;
     }
 
     public static void main(String[] args) {
         int agecheck = getMinValue(3,4);
         boolean oddcheck = isOdd(77);
+        boolean palindromecheck = isPalindrome("anna");
         System.out.println(agecheck);
         System.out.println(oddcheck);
+        System.out.println(palindromecheck);
     }
 }
