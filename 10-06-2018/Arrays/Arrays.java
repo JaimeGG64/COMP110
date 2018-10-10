@@ -27,9 +27,17 @@ class Arrays{
         return max;
     }
 
+    public static boolean isStringInArray(String wordtoFind, String[] stringArray){
+        for(int i = 0; i < stringArray.length; i++){
+            if(stringArray[i].equals(wordtoFind)){
+              return true;  
+            } 
+        }
+        return false;
+    }    
+
     public static void main(String[] args){
         int[] intArray = new int[6];
-
         intArray[0] = 0;
         intArray[1] = 2;
         intArray[2] = 54;
@@ -37,7 +45,35 @@ class Arrays{
         intArray[4] = 125;
         intArray[5] = 8;
 
+        int[] someNumbers = {
+            34,
+            3425,
+            254,
+            252,
+            342
+        };
+
+        String[] pets = new String[3];
+        pets[0] = "dog";
+        pets[1] = "cat";
+        pets[2] = "fish";
+
+        String[] shoppingList = {
+            "eggs",
+            "milk",
+            "cheese",
+            "bread",
+            "ham"
+        };
+
+        boolean wordcheck = isStringInArray("bird", pets);
+        System.out.println(wordcheck);
+
         System.out.println(intArray[3]);
+        System.out.println(shoppingList[4]);
+
+        System.out.println(pets[1]);
+        System.out.println(someNumbers[2]);
 
         int sumnum = sumOfArray(intArray);
 
