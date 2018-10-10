@@ -13,18 +13,18 @@
 //Application: Algo
 //Purpose: Using methods
 class Algo{
-    public static int getMinValue(int input1, int input2){
-        if(input1 < input2){
-            return input1;
+    public static int getMinValue(int numberInput1, int numberInput2){
+        if(numberInput1 < numberInput2){
+            return numberInput1;
         }
-        return input2;
+        return numberInput2;
     }
 
-    public static int getMaxValue(int input1, int input2){
-        if(input1 > input2){
-            return input1;
+    public static int getMaxValue(int numberInput1, int numberInput2){
+        if(numberInput1 > numberInput2){
+            return numberInput1;
         }
-        return input2;
+        return numberInput2;
     }
 
     public static boolean isOdd(int number){
@@ -54,12 +54,23 @@ class Algo{
         return true;
     }
 
+    public static boolean isCharInString(char characterToCheck, String word){
+        for(int i = 0 ; i < word.length();i++){
+            if(word.charAt(i) == characterToCheck){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         int agecheck = getMinValue(3,4);
         boolean oddcheck = isOdd(77);
         boolean palindromecheck = isPalindrome("anna");
+        boolean charcheck = isCharInString('z',"hell");
         System.out.println(agecheck);
         System.out.println(oddcheck);
         System.out.println(palindromecheck);
+        System.out.println(charcheck);
     }
 }
