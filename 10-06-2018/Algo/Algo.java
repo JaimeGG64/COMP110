@@ -64,13 +64,47 @@ class Algo{
     }
 
     public static void main(String[] args) {
-        int agecheck = getMinValue(3,4);
-        boolean oddcheck = isOdd(77);
+        //Minimum Checker
+        int minCheck1 = getMinValue(-1,20);
+        int minCheck2 = getMinValue(123,5);
+        int minCheck3 = getMinValue(0,5);
+        String minCheckerMessage = "The getMinValue() methods gave the following outputs\n" + minCheck1 + " " + minCheck2 + " " + minCheck3;
+        
+        //Maximum Checker
+        int maxCheck1 = getMaxValue(1234,4533);
+        int maxCheck2 = getMaxValue(0,-2);
+        int maxCheck3 = getMaxValue(-342,-123);
+        String maxCheckerMessage = "The getMaxValue() methods gave the following outputs\n" + maxCheck1 + " " + maxCheck2 + " " + maxCheck3;
+        
+        //Odd Checker
+        boolean oddcheck1 = isOdd(8);
+        boolean oddcheck2 = isOdd(77);
+        boolean oddcheck3 = isOdd(21);
+        String oddCheckerMessage = "The isOdd() methods gave the following outputs\n" + oddcheck1 + " " + oddcheck2 + " " + oddcheck3;
+
+        //Even Checker
+        boolean evencheck1 = isEven(6);
+        boolean evencheck2 = isEven(34567);
+        boolean evencheck3 = isEven(0);
+        String evenCheckerMessage = "The isEven() methods gave the following outputs\n" + evencheck1 + " " + evencheck2 + " " + evencheck3;
+        
+        //Palindrome Checker
+        boolean notaPalindrome = isPalindrome("Blue");
+        boolean longPalindromeCheck = isPalindrome("tattarrattat");
         boolean palindromecheck = isPalindrome("anna");
-        boolean charcheck = isCharInString('z',"hell");
-        System.out.println(agecheck);
-        System.out.println(oddcheck);
-        System.out.println(palindromecheck);
-        System.out.println(charcheck);
+        String palindromeCheckerMessage = "The isPalindrome() methods gave the following outputs\n" + notaPalindrome + " " + longPalindromeCheck + " " + palindromecheck;
+        
+        //Character in Checker
+        boolean charcheck1 = isCharInString('i',"teamwork");
+        boolean charcheck2 = isCharInString('o',"Zoo");
+        boolean charcheck3 = isCharInString('m',"dog");
+        String charCheckerMessage = "The isCharInString() methods gave the following outputs\n" + charcheck1 + " " + charcheck2 + " " + charcheck3;
+        
+        System.out.println(minCheckerMessage);
+        System.out.println(maxCheckerMessage);
+        System.out.println(oddCheckerMessage);
+        System.out.println(evenCheckerMessage);
+        System.out.println(palindromeCheckerMessage);
+        System.out.println(charCheckerMessage);
     }
 }
