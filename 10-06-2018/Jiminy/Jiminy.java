@@ -59,7 +59,7 @@ public class Jiminy{
                     System.out.println("Total Memory: " + totalMemory + " Bytes");
                     break;
                 case "-v":
-                    System.out.print("version 1.0");
+                    System.out.println("version 1.0");
                     break;
                 default: System.out.println(jiminyCompleteGreeting);
             }
