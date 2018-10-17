@@ -17,8 +17,8 @@ Jiminy
     “java Jiminy -time”
     “java Jiminy -date -time”
 - Jiminy must support the following options
-    -date
-    -time
+    -date - Current date
+    -time - Current time
     -proc - Available processors
     -freemem - Free memory
     -maxmem- Maximum memory
@@ -30,70 +30,50 @@ Jiminy
 //Purpose: Jiminy
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Scanner;
 public class Jiminy{
-
-
-
     public static void main(String[] args){
-        // Date getCurrentDateAndTime = new Date();
-        // Scanner userInput = new Scanner(System.in);
         Date getCurrentDateAndTime = new Date();
-        SimpleDateFormat currentTime;
-        SimpleDateFormat todayDate;
-        currentTime = new SimpleDateFormat("kk:mm:ss");
-        todayDate = new SimpleDateFormat("MM-dd-yyyy");
-        
-        String[] userOptions = {
-            "date",
-            "time",
-            "proc",
-            "freemem",
-            "maxmem",
-            "totmem"
-        };
+
+        int i = 0;
+        while(i < args.length){
+            switch(args[i]){
+                case "-date": 
+                    SimpleDateFormat todayDate;
+                    todayDate = new SimpleDateFormat("MM-dd-yyyy");
+                    System.out.println(todayDate.format(getCurrentDateAndTime));
+                    break;
+                case "-time":
+                    SimpleDateFormat currentTime;
+                    currentTime = new SimpleDateFormat("kk:mm:ss");
+                    System.out.println(currentTime.format(getCurrentDateAndTime));
+                    break;
+                case "-proc":
+                    int processors = Runtime.getRuntime().availableProcessors();
+                    System.out.println("CPU cores: " + processors);
+                    break;
+                case "-freemem":
+                    long freeMemory = Runtime.getRuntime().freeMemory();
+                    System.out.println("Free Memory: " + freeMemory + " Bytes");
+                    break;
+                case "-maxmem":
+                    long maxMemory = Runtime.getRuntime().maxMemory();
+                    System.out.println("Max Memory: " + maxMemory + " Bytes");
+                    break;
+                case "-totmem":
+                    long totalMemory = Runtime.getRuntime().totalMemory();
+                    System.out.println("Total Memory: " + totalMemory + " Bytes");
+                    break;
+                default: System.out.println("Hello");
+            }
+            i++;
+        }
         
         //Menu
-        if(true){
-            String jiminyOpitionsMenu = "-date\n" + "-time\n" + "-proc\n" + "-freemem\n" + "-maxmem\n" + "-totmem";
+        if(false){
             String jiminyWelcomeMessage = "Welcome to Jiminy!\n";
+            String jiminyOpitionsMenu = "-date\n" + "-time\n" + "-proc\n" + "-freemem\n" + "-maxmem\n" + "-totmem";
             String jiminyCompleteGreeting = jiminyWelcomeMessage + jiminyOpitionsMenu;
             System.out.println(jiminyCompleteGreeting);
-        }
-
-        //Date
-        if(true){
-            System.out.println(todayDate.format(getCurrentDateAndTime));
-        }
-        
-        //Time
-        if(true){
-            System.out.println(currentTime.format(getCurrentDateAndTime));
-            
-        }
-
-        //CPU
-        if(true){
-            int processors = Runtime.getRuntime().availableProcessors();
-            System.out.println("CPU cores: " + processors);
-        }
-
-        //Free Memory
-        if(true){
-            long freeMemory = Runtime.getRuntime().freeMemory();
-            System.out.println("Free Memory: " + freeMemory + " Bytes");
-        }
-
-        //Max Memory
-        if(true){
-            long maxMemory = Runtime.getRuntime().maxMemory();
-            System.out.println("Max Memory: " + maxMemory + " Bytes");
-        }
-
-        //Total Memory
-        if(true){
-            long totalMemory = Runtime.getRuntime().totalMemory();
-            System.out.println("Total Memory: " + totalMemory + " Bytes");
         }
     }
 }
