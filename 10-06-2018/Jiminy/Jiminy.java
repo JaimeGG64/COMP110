@@ -16,14 +16,13 @@ Jiminy
     “java Jiminy -date”
     “java Jiminy -time”
     “java Jiminy -date -time”
-
 - Jiminy must support the following options
     -date
     -time
--proc - Available processors
--freemem - Free memory
--maxmem- Maximum memory
--totmem -Total Memory
+    -proc - Available processors
+    -freemem - Free memory
+    -maxmem- Maximum memory
+    -totmem -Total Memory
 */
 //Name: Jaime Garcia Garcia
 //Date: 10-06-2018
@@ -31,14 +30,70 @@ Jiminy
 //Purpose: Jiminy
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Scanner;
 public class Jiminy{
+
+
+
     public static void main(String[] args){
-        Date d = new Date();
+        // Date getCurrentDateAndTime = new Date();
+        // Scanner userInput = new Scanner(System.in);
+        Date getCurrentDateAndTime = new Date();
         SimpleDateFormat currentTime;
         SimpleDateFormat todayDate;
         currentTime = new SimpleDateFormat("kk:mm:ss");
         todayDate = new SimpleDateFormat("MM-dd-yyyy");
-        System.out.println(currentTime.format(d));
-        System.out.println(todayDate.format(d));
+        
+        String[] userOptions = {
+            "date",
+            "time",
+            "proc",
+            "freemem",
+            "maxmem",
+            "totmem"
+        };
+        
+        //Menu
+        if(true){
+            String jiminyOpitionsMenu = "-date\n" + "-time\n" + "-proc\n" + "-freemem\n" + "-maxmem\n" + "-totmem";
+            String jiminyWelcomeMessage = "Welcome to Jiminy!\n";
+            String jiminyCompleteGreeting = jiminyWelcomeMessage + jiminyOpitionsMenu;
+            System.out.println(jiminyCompleteGreeting);
+        }
+
+        //Date
+        if(true){
+            System.out.println(todayDate.format(getCurrentDateAndTime));
+        }
+        
+        //Time
+        if(true){
+            System.out.println(currentTime.format(getCurrentDateAndTime));
+            
+        }
+
+        //CPU
+        if(true){
+            int processors = Runtime.getRuntime().availableProcessors();
+            System.out.println("CPU cores: " + processors);
+        }
+
+        //Free Memory
+        if(true){
+            long freeMemory = Runtime.getRuntime().freeMemory();
+            System.out.println("Free Memory: " + freeMemory + " Bytes");
+        }
+
+        //Max Memory
+        if(true){
+            long maxMemory = Runtime.getRuntime().maxMemory();
+            System.out.println("Max Memory: " + maxMemory + " Bytes");
+        }
+
+        //Total Memory
+        if(true){
+            long totalMemory = Runtime.getRuntime().totalMemory();
+            System.out.println("Total Memory: " + totalMemory + " Bytes");
+        }
     }
 }
