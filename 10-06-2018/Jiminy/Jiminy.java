@@ -34,12 +34,12 @@ public class Jiminy{
             switch(args[i]){
                 case "-date": 
                     SimpleDateFormat todayDate;
-                    todayDate = new SimpleDateFormat("MM-dd-yyyy");
+                    todayDate = new SimpleDateFormat("EEE, MMM d, yyyy");
                     System.out.println("Date: " + todayDate.format(getCurrentDateAndTime));
                     break;
                 case "-time":
                     SimpleDateFormat currentTime;
-                    currentTime = new SimpleDateFormat("kk:mm:ss");
+                    currentTime = new SimpleDateFormat("K:mm a, z");
                     System.out.println("Time: " + currentTime.format(getCurrentDateAndTime));
                     break;
                 case "-proc":
@@ -59,6 +59,8 @@ public class Jiminy{
                     System.out.println("Total Memory: " + totalMemory + " Bytes");
                     break;
                 case "-v":
+                case "-version":
+                case "-ver":
                     System.out.println("version 1.0");
                     break;
                 default: System.out.println(jiminyCompleteGreeting);
