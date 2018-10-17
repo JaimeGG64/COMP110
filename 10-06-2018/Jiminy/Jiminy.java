@@ -33,7 +33,28 @@ import java.util.Date;
 public class Jiminy{
     public static void main(String[] args){
         Date getCurrentDateAndTime = new Date();
+        String jiminyWelcomeMessage = "Welcome to Jiminy!\n";
+        String jiminyExample = "To use the app type\n" + "java Jiminy <options>\n" + "Example: java Jiminy -time\n";
+        String[] jiminyMenuOptions = {
+            "-date -- displays current date\n",
+            "-time -- displays current time\n",
+            "-proc -- displays number of available processors\n",
+            "-freemem -- displays the amount of free memory\n",
+            "-maxmem -- displays the amount of max memory\n",
+            "-totmem -- displays the amount of total memory",
+        };
 
+        //Builds the list of options into one string
+        StringBuilder createOptionList = new StringBuilder();
+        for(int countOptions = 0; countOptions < jiminyMenuOptions.length; countOptions++){
+            createOptionList.append(jiminyMenuOptions[countOptions]);
+        }
+        String jiminyCompleteteMenuOptions = createOptionList.toString();
+        
+        //Jiminy default greeting
+        String jiminyCompleteGreeting = jiminyWelcomeMessage + jiminyExample + jiminyCompleteteMenuOptions;
+        
+        //Check which options the user input
         int i = 0;
         while(i < args.length){
             switch(args[i]){
@@ -63,16 +84,15 @@ public class Jiminy{
                     long totalMemory = Runtime.getRuntime().totalMemory();
                     System.out.println("Total Memory: " + totalMemory + " Bytes");
                     break;
-                default: System.out.println("Hello");
+                case "-v":
+                    System.out.print("version 1.0");
+                default: System.out.println(jiminyCompleteGreeting);
             }
             i++;
         }
         
-        //Menu
-        if(false){
-            String jiminyWelcomeMessage = "Welcome to Jiminy!\n";
-            String jiminyOpitionsMenu = "-date\n" + "-time\n" + "-proc\n" + "-freemem\n" + "-maxmem\n" + "-totmem";
-            String jiminyCompleteGreeting = jiminyWelcomeMessage + jiminyOpitionsMenu;
+        //If the user fails to put any arguments then the app would display the default greeting message
+        if(args.length == 0){
             System.out.println(jiminyCompleteGreeting);
         }
     }
