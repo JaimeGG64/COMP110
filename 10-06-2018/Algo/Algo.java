@@ -81,13 +81,13 @@ class Algo{
         //Palindrome Checker
         boolean notaPalindrome = isPalindrome("Blue");
         boolean longPalindromeCheck = isPalindrome("tattarrattat");
-        boolean palindromecheck = isPalindrome("anna");
+        boolean palindromecheck = isPalindrome("Anna");
         String palindromeCheckerMessage = "The isPalindrome() methods gave the following outputs\n" + notaPalindrome + "\n" + longPalindromeCheck + "\n" + palindromecheck;
         
         //Character in Checker
         boolean charcheck1 = isCharInString('i',"teamwork");
-        boolean charcheck2 = isCharInString('o',"Zoo");
-        boolean charcheck3 = isCharInString('m',"dog");
+        boolean charcheck2 = isCharInString('z',"Zoo");
+        boolean charcheck3 = isCharInString('d',"dog");
         String charCheckerMessage = "The isCharInString() methods gave the following outputs\n" + charcheck1 + "\n" + charcheck2 + "\n" + charcheck3;
         
         System.out.println(minCheckerMessage);
