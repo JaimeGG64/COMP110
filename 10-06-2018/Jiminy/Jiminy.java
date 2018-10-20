@@ -1,7 +1,7 @@
 //Name: Jaime Garcia Garcia
 //Date: 10-06-2018
 //Application: Jiminy
-//Purpose: Jiminy
+//Purpose: A simple applicatime to tell the time and date.
 import java.text.SimpleDateFormat;
 import java.util.Date;
 public class Jiminy{
