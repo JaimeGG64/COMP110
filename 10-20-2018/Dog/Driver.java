@@ -43,5 +43,12 @@ class Driver {
         System.out.println(myDalmatian.getName() + " has an average speed of: " + myDalmatian.getSpeed());
         System.out.println("The color of " + myDalmatian.getName() + " is " + myDalmatian.getColor());
         System.out.println("The size of " + myDalmatian.getName() + " is " + myDalmatian.getSize());
+
+        OldEnglishSheepdog myOldEnglishSheepdog = new OldEnglishSheepdog();
+        System.out.println("My dogs name is " + myOldEnglishSheepdog.getName());
+        System.out.println(myOldEnglishSheepdog.getName() + " barks like this [" + myOldEnglishSheepdog.bark() +"]");
+        System.out.println(myOldEnglishSheepdog.getName() + " has an average speed of: " + myOldEnglishSheepdog.getSpeed());
+        System.out.println("The color of " + myOldEnglishSheepdog.getName() + " is " + myOldEnglishSheepdog.getColor());
+        System.out.println("The size of " + myOldEnglishSheepdog.getName() + " is " + myOldEnglishSheepdog.getSize());
     }
 }

@@ -1,3 +1,4 @@
+//Breed #1
 class Beagle extends Dog {
      // default name
      @Override
