@@ -1,7 +1,5 @@
 class Beagle extends Dog {
-     // default speed
-     // default size
-     // default color 
+     // default name
      @Override
      public String getSize(){
          return "small";
