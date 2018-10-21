@@ -17,10 +17,6 @@ class Driver {
         System.out.println(name + " has an average speed of: " + myLab.getSpeed());
         System.out.println("The color of " + name + " is " + myLab.getColor());
         System.out.println("The size of " + name + " is " + myLab.getSize());
-        
-        // for(int i = 0; i < 50; i++){
-        //     System.out.print("-");
-        // }
 
         //My dog breeds
         Beagle myBeagle = new Beagle();
@@ -50,5 +46,12 @@ class Driver {
         System.out.println(myOldEnglishSheepdog.getName() + " has an average speed of: " + myOldEnglishSheepdog.getSpeed());
         System.out.println("The color of " + myOldEnglishSheepdog.getName() + " is " + myOldEnglishSheepdog.getColor());
         System.out.println("The size of " + myOldEnglishSheepdog.getName() + " is " + myOldEnglishSheepdog.getSize());
+        
+        DutchShepherd myDutchShepherd = new DutchShepherd("Jocob");
+        System.out.println("My dogs name is " + myDutchShepherd.getName());
+        System.out.println(myDutchShepherd.getName() + " barks like this [" + myDutchShepherd.bark() +"]");
+        System.out.println(myDutchShepherd.getName() + " has an average speed of: " + myDutchShepherd.getSpeed());
+        System.out.println("The color of " + myDutchShepherd.getName() + " is " + myDutchShepherd.getColor());
+        System.out.println("The size of " + myDutchShepherd.getName() + " is " + myDutchShepherd.getSize());
     }
 }
