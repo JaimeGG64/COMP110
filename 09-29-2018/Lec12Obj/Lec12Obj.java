@@ -1,7 +1,7 @@
 //Name: Jaime Garcia Garcia
 //Date: 09-29-2018
 //Application: Lecture Object Constr
-//Purpose: The application demos the different loops
+//Purpose: Learn how to use object constructor
 
 class Lec12Obj {
     public static void main(String[] args) {
