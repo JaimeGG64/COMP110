@@ -74,7 +74,7 @@ class Driver {
         lineDivider();
         
         //Breed #5
-        DutchShepherd myDutchShepherd = new DutchShepherd("Jocob");
+        DutchShepherd myDutchShepherd = new DutchShepherd("Steve");
         System.out.println("My dogs name is " + myDutchShepherd.getName());
         System.out.println(myDutchShepherd.getName() + " barks like this [" + myDutchShepherd.bark() +"]");
         System.out.println(myDutchShepherd.getName() + " has an average speed of: " + myDutchShepherd.getSpeed());
