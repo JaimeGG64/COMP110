@@ -17,6 +17,14 @@ public class Person{
         this.name = name;
     }
 
+    public String getLast(){
+        return last;
+    }
+
+    public void setLast(String last){
+        this.last = last;
+    }
+
     public int getAge(){
         return age;
     }
