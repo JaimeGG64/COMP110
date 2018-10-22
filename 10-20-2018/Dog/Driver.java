@@ -12,7 +12,7 @@
 */
 //Note refer to Inherentance
 class Driver {
-    public static void lineFormatter(){
+    public static void lineDivider(){
         int maxLine = 50;
         int i = 0;
         while(i <= maxLine){
@@ -35,7 +35,7 @@ class Driver {
         System.out.println("The color of " + name + " is " + myLab.getColor());
         System.out.println("The size of " + name + " is " + myLab.getSize());
 
-        lineFormatter();
+        lineDivider();
 
         //Breed #1
         Beagle myBeagle = new Beagle();
@@ -44,7 +44,7 @@ class Driver {
         System.out.println(myBeagle.getName() + " has an average speed of: " + myBeagle.getSpeed());
         System.out.println("The color of " + myBeagle.getName() + " is " + myBeagle.getColor());
         System.out.println("The size of " + myBeagle.getName() + " is " + myBeagle.getSize());
-        lineFormatter();
+        lineDivider();
 
         //Breed #2
         Jindo myJindo = new Jindo();
@@ -53,7 +53,7 @@ class Driver {
         System.out.println(myJindo.getName() + " has an average speed of: " + myJindo.getSpeed());
         System.out.println("The color of " + myJindo.getName() + " is " + myJindo.getColor());
         System.out.println("The size of " + myJindo.getName() + " is " + myJindo.getSize());
-        lineFormatter();
+        lineDivider();
 
         //Breed #3
         Dalmatian myDalmatian = new Dalmatian();
@@ -62,7 +62,7 @@ class Driver {
         System.out.println(myDalmatian.getName() + " has an average speed of: " + myDalmatian.getSpeed());
         System.out.println("The color of " + myDalmatian.getName() + " is " + myDalmatian.getColor());
         System.out.println("The size of " + myDalmatian.getName() + " is " + myDalmatian.getSize());
-        lineFormatter();
+        lineDivider();
 
         //Breed #4
         OldEnglishSheepdog myOldEnglishSheepdog = new OldEnglishSheepdog();
@@ -71,7 +71,7 @@ class Driver {
         System.out.println(myOldEnglishSheepdog.getName() + " has an average speed of: " + myOldEnglishSheepdog.getSpeed());
         System.out.println("The color of " + myOldEnglishSheepdog.getName() + " is " + myOldEnglishSheepdog.getColor());
         System.out.println("The size of " + myOldEnglishSheepdog.getName() + " is " + myOldEnglishSheepdog.getSize());
-        lineFormatter();
+        lineDivider();
         
         //Breed #5
         DutchShepherd myDutchShepherd = new DutchShepherd("Jocob");
@@ -80,6 +80,6 @@ class Driver {
         System.out.println(myDutchShepherd.getName() + " has an average speed of: " + myDutchShepherd.getSpeed());
         System.out.println("The color of " + myDutchShepherd.getName() + " is " + myDutchShepherd.getColor());
         System.out.println("The size of " + myDutchShepherd.getName() + " is " + myDutchShepherd.getSize());
-        lineFormatter();
+        lineDivider();
     }
 }
