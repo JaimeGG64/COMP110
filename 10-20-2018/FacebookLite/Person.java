@@ -2,6 +2,7 @@ public class Person{
     private String name;
     private String last;
     private int age;
+    private boolean showAge;
 
     public Person(String name, String last, int age){
         this.name = name;
