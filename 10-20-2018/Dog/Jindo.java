@@ -1,6 +1,6 @@
 //Bread #2
 class Jindo extends Dog{
-    //Default bark
+    //Must have default bark
     @Override
     public String getColor(){
         return "blonde";

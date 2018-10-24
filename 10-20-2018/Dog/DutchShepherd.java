@@ -1,6 +1,6 @@
 //Breed #5
 class DutchShepherd extends Dog {
-    //Default speed
+    //Must have default speed
     public DutchShepherd(String name){
         super(name);
     }

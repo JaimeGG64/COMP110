@@ -1,6 +1,6 @@
 //Breed #1
 class Beagle extends Dog {
-     // default name
+     //Must have default name
      @Override
      public String getSize(){
          return "small";

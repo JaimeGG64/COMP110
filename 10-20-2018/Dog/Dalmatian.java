@@ -1,6 +1,6 @@
 //Breed #3
 class Dalmatian extends Dog{
-    // Default size
+    //Must have default size
     @Override
     public int getSpeed(){
         return 7;
