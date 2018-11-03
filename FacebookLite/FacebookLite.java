@@ -1,4 +1,4 @@
-class Driver{
+class FacebookLite{
     public static void main(String[] args){
         Person person1 = new Person("Kenny", "McCormick",10);
         Person person2 = new Person("Butter", "Stotch", 10);
