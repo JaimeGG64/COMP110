@@ -7,6 +7,9 @@ public class Stack{
         this.size = size;
         Stack = new String[size];
         top = -1;
+        for(int i =0; i < size;i++ ){
+            stack[i] = "";
+        }
     }
 
     //Checks for status of the array
