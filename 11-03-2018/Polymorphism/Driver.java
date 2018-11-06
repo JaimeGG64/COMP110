@@ -14,6 +14,9 @@ Using the rectangle object, print out the area of the rectangle by calling getAr
 */
 class Driver{
     public static void main(String[] args) {
-        System.out.print("Hi");
+        // System.out.print("Hi");
+        Shape findRect = new Rectangle();
+        findRect.setSize(4,5);
+        System.out.println(findRect.getArea());
     }
 }

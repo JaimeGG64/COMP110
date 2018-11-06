@@ -10,9 +10,12 @@ declare an abstract method called “getArea”
     The return type of this method should be double
     No parameters
 */
-public abstract class Shape{
-    double width, height;
-
-    public abstract double setSize(double width, double height);
+abstract class Shape{
+    public double width;
+    public double height;
+    public void setSize(double width, double height){
+        this.width = width;
+        this.height = height;
+    }
     public abstract double getArea();
 }
