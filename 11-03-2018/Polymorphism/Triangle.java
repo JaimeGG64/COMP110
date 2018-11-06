@@ -4,8 +4,7 @@ This class has only one method called “getArea”
 “getArea” method should return the area of a triangle
 */
 class Triangle extends Shape{
-    @Override
     public double getArea(){
-        return (width*height)/2;
+        return ((width*height)/2);
     }
 }
