@@ -14,8 +14,9 @@ class User extends Person implements IDisplayable{
             System.out.print("Age:" + getAge());
         }
     }
-    public void toggleAgeVisible(){
-        isAgeVisible =! isAgeVisible;
+
+    public void toggleVisibility(){
+        isAgeVisible = !isAgeVisible;
     }
 
     public String getStatus(){
