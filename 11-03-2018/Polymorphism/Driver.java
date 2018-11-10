@@ -4,10 +4,10 @@
 //Purpose: To learn about inheritance and abstract class.
 class Driver{
     public static void main(String[] args) {
-        Shape myRect = new Rectangle();
-        myRect.setSize(4,5);
-        Shape myTri = new Triangle();
-        myTri.setSize(5,3);
+        Rectangle myRect = new Rectangle();
+        myRect.setSize(4,6);
+        Triangle myTri = new Triangle();
+        myTri.setSize(12,3);
         System.out.println(myRect.getArea());
         System.out.println(myTri.getArea());
     }
