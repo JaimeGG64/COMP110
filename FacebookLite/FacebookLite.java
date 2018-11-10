@@ -13,16 +13,27 @@ class FacebookLite{
         profiles = new Profile[5];
     }
     public void createProfile(String fname,String lname,int age) {
-        if(idx<profiles.length-1) {
-            Profile p = new Profile(fname,lname,age);
+        if(idx < profiles.length-1) {
+            Profile profile = new Profile(fname,lname,age);
             idx++;
-            profiles[idx] = p;
+            profiles[idx] = profile;
             nop++;
             Util.print("Profile created!\n");
         }
         else {
             Util.print("No room to create a new profile\n");
         }
+    }
+
+    public void deleteProfile(){
+        if(idx < 0){
+            System.out.println("You need a profile");
+            return;
+        }
+        System.out.println("Profile deleted: " + profiles[idx].getUser().getFullName());
+        profiles[idx] = null;
+        idx--;
+        nop--;
     }
     public static void main(String[] args){
         
@@ -36,16 +47,16 @@ class FacebookLite{
                 Util.print("Goodbye");
                 return;
                 case 1: //create profile
-                    // Util.print("Please enter your first name");
-                    // String name = fbl.sc.nextLine();
-                    // Util.print("Please enter your last name");
-                    // String last = fbl.sc.nextLine();
-                    // Util.print("Please enter your age");
-                    // int age = Integer.parseInt(fbl.sc.nextLine());
-                    // fbl.createProfile(name,last,age);
-                    System.out.print("Hi");
+                    Util.print("Please enter your first name");
+                    String name = fbl.sc.nextLine();
+                    Util.print("Please enter your last name");
+                    String last = fbl.sc.nextLine();
+                    Util.print("Please enter your age");
+                    int age = Integer.parseInt(fbl.sc.nextLine());
+                    fbl.createProfile(name,last,age);
                 break;
                 case 2: //delete last profile
+                    fbl.deleteProfile();
                 break;
                 case 3:  //switch profiles
                 break;

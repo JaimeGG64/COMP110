@@ -21,6 +21,10 @@ public abstract class Person{
     public String getLast(){
         return last;
     }
+
+    public String getFullName(){
+        return name + " " + last;
+    }
     
     //setter
     public void setAge(int age){

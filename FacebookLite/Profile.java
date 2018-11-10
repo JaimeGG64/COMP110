@@ -22,4 +22,8 @@ class Profile{
     public void togglePost(){
         post.toggleVisibility();
     }
+
+    public User getUser(){
+        return user;
+    }
 }
