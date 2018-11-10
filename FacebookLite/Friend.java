@@ -1,17 +1,30 @@
 class Friend implements IDisplayable{
     private Stack friends;
     private boolean isFriendsVisible;
+
     public Friend(){
-        friend = new Stack[5]; //5 for testing
+        friends = new Stack(5); //5 for testing
         isFriendsVisible = true;
     }
+    public void display(){
+        if(isFriendsVisible){
+            Util.print("Friends: ");
+            friends.print();
+        }
+    }
+
+    public void toggleVisibility(){
+        isFriendsVisible = !isFriendsVisible;
+    }
+
     public void addFriend(String name){
         friends.push(name);
     }
-    public void removeFriends(){
+
+    public void removeFriend(){
         friends.pop();
     }
-    public removeAllFriends(){
+    public void removeAllFriends(){
         friends.reset();
     }
 }

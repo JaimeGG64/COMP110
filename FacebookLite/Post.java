@@ -1,4 +1,16 @@
-class Post implements IDisplayable{
+public class Post implements IDisplayable{
     private Stack posts;
-    private boolean isPostVisible;
+    private boolean isPostsVisible;
+    
+    public Post() {
+        posts = new Stack(5);
+    }
+    
+    public void display() {
+        posts.print();
+    }
+    
+    public void toggleVisibility() {
+        isPostsVisible = !isPostsVisible;
+    }
 }

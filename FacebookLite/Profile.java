@@ -20,6 +20,6 @@ class Profile{
     }
 
     public void togglePost(){
-        p.toggleVisibility();
+        post.toggleVisibility();
     }
 }
