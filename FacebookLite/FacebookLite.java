@@ -35,6 +35,22 @@ class FacebookLite{
         idx--;
         nop--;
     }
+
+    public void deleteAllProfile(){
+        if(idx < 0){
+            System.out.println("You need a profile");
+            return;
+        }
+        System.out.println("The following profiles are deleted");
+        for(int i = 0; i < profiles.length; i++){
+            if(profiles[i] != null){
+                System.out.println("Profile deleted: " + profiles[i].getUser().getFullName());
+                profiles[i] = null;
+            }
+        } 
+        idx=-1;
+        nop=0;
+    }
     public static void main(String[] args){
         
         FacebookLite fbl = new FacebookLite();
@@ -83,6 +99,7 @@ class FacebookLite{
                 case 14: //change status
                 break;
                 case 15: //delete all profiles
+                    fbl.deleteAllProfile();
                 break;
             }
         }
