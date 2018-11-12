@@ -24,7 +24,7 @@ class Arrays{
     public static boolean isStringInArray(String wordToFind, String[] arrayOfString){
         for(int i = 0; i < arrayOfString.length; i++){
             if(arrayOfString[i].equals(wordToFind)){
-              return true;  
+                return true;  
             } 
         }
         return false;
