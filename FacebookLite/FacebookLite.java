@@ -12,6 +12,7 @@ class FacebookLite{
         nop = 0;
         profiles = new Profile[5];
     }
+
     public void createProfile(String fname,String lname,int age) {
         if(idx < profiles.length-1) {
             Profile profile = new Profile(fname,lname,age);
@@ -51,6 +52,20 @@ class FacebookLite{
         idx=-1;
         nop=0;
     }
+
+    public void printProfile(){
+        if(idx < 0){
+            System.out.println("You need a profile");
+            return;
+        }
+        System.out.println("Available Profiles");
+        for(int i = 0; i < profiles.length; i++){
+            if(profiles[i] != null){
+                profiles[i].printProfile();
+            }
+        }
+    }
+
     public static void main(String[] args){
         
         FacebookLite fbl = new FacebookLite();
@@ -77,6 +92,7 @@ class FacebookLite{
                 case 3:  //switch profiles
                 break;
                 case 4:  //print profile
+                    fbl.printProfile();
                 break;
                 case 5:  //add friend
                 break;
