@@ -122,6 +122,19 @@ class Algo{
     // Reverse String
     // String split using any delemiter (String, delim) (returns a String[])
     // Bubble sort int[]
+    public static int[] bubbleSortIntegerArray(int arrayOfInteger[]){
+        for(int i = 0; i < arrayOfInteger.length - 1; i++){
+            for(int j = 0; j < arrayOfInteger.length - i - 1; j++){
+                if(arrayOfInteger[j] > arrayOfInteger[j + 1]){
+                    int temporaryLargeNumber = arrayOfInteger[j];
+                    arrayOfInteger[j] = arrayOfInteger[j + 1];
+                    arrayOfInteger[j + 1] = temporaryLargeNumber;
+                }
+            }
+        }
+        return arrayOfInteger;
+    }
+
     // Bubble sort String[]
     // Prime number
 }
