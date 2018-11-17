@@ -1,6 +1,9 @@
+//Name: Jaime Garcia Garcia
+//Date: 11-10-2018
+//Application: Checker Board
+//Purpose: To create a checkerboard pattern.
 class CheckersBoard{
     public static void main(String[] args){
-        // System.out.print("Hi");
         final int BLANK = 0;
         final int WHITE = 1;
         final int BLUE = 2;
