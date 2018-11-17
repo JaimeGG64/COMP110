@@ -136,5 +136,20 @@ class Algo{
     }
 
     // Bubble sort String[]
+    public static String[] bubbleSortStringArray(String arrayOfString[]){
+        String temporaryString;
+        int indexNumber;
+        for(int i = 1; i < arrayOfString.length; i++){
+            for(int j = 0; j < arrayOfString.length - i; j++){
+                indexNumber = arrayOfString[j].compareTo(arrayOfString[j + 1]);
+                if(indexNumber > 0){
+                    temporaryString = arrayOfString[j];
+                    arrayOfString[j] = arrayOfString[j + 1];
+                    arrayOfString[j + 1] = temporaryString;
+                }
+            }
+        }
+        return arrayOfString;
+    }
     // Prime number
 }
