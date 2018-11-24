@@ -19,6 +19,7 @@ class Driver{
             PrintWriter myOutput = new PrintWriter(myFile);
             myOutput.println("John Doe");
             myOutput.println(24);
+            myOutput.close();
         }
         catch(IOException ex){
             System.out.print("Bad");
