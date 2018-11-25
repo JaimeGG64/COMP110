@@ -25,7 +25,7 @@ class ShuttleLaunch{
                 }
                 else if(i == 0){
                     System.out.println(countDownMessage[i]);
-                    System.out.println("We have a lifeoff");
+                    System.out.println("We have a liftoff!");
                     Thread.sleep(SLEEP_TIME_MILLISECONDS);
                 }
                 else{
