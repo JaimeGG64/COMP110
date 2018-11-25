@@ -9,17 +9,15 @@
 */
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.PrintStream;
 
 class Driver{
     public static void main(String[] args){
-        File myFile = new File("test.txt");
-
         try{
-            PrintWriter myOutput = new PrintWriter(myFile);
-            myOutput.println("John Doe");
-            myOutput.println(24);
-            myOutput.close();
+            PrintStream writer = new PrintStream( new File("output.txt"));   
+            for(int i = 0; i < 100; i++) {    
+                    writer.println("hi: " + (Math.random() * 40 + 1));
+                }
         }
         catch(IOException ex){
             System.out.print("Bad");
