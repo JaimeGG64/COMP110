@@ -29,6 +29,19 @@ public class Stack{
         }
     }
 
+    public void search(int item){
+        if(top >= item){
+            System.out.println(stack[item]);
+        }
+        else{
+            System.out.println("item not found");
+        }
+    }
+
+    public void peek(){
+        System.out.println(stack[top]);
+    }
+
     public String pop(){
         if(isEmpty()){
             System.out.println("It Empty");
