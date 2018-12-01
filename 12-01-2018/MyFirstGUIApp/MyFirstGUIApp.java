@@ -23,6 +23,11 @@ import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
+//Menu Item Listeners
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JOptionPane;
+
 public class MyFirstGUIApp{
     //Member Variables
     private JFrame frame;
@@ -34,6 +39,8 @@ public class MyFirstGUIApp{
     private JMenuBar menuBar;
     private JMenu fileMenu;
     private JMenu helpMenu;
+    private JMenuItem exitItem;
+    private JMenuItem aboutItem;
     private JSplitPane splitPane;
 
     //constructor
@@ -45,7 +52,7 @@ public class MyFirstGUIApp{
     private void initComponents(){
         try{
             UIManager.setLookAndFeel(
-                UIManager.getCrossPlatformLookAndFeelClassName()
+                UIManager.getSystemLookAndFeelClassName()
             );
         }
         catch (Exception e){
@@ -80,8 +87,8 @@ public class MyFirstGUIApp{
         menuBar = new JMenuBar();
         fileMenu = new JMenu("File");
         helpMenu = new JMenu("Help");
-        JMenuItem exitItem = new JMenuItem("Exit");
-        JMenuItem aboutItem = new JMenuItem("About");
+        exitItem = new JMenuItem("Exit");
+        aboutItem = new JMenuItem("About");
         fileMenu.add(exitItem);
         helpMenu.add(aboutItem);
         menuBar.add(fileMenu);
@@ -107,5 +114,28 @@ public class MyFirstGUIApp{
         frame.setSize(740,540);
         frame.setJMenuBar(menuBar);
         frame.setVisible(true);
+
+        exitItem.addActionListener(
+            new java.awt.event.ActionListener(){
+                public void actionPerformed(ActionEvent e){
+                    exitActionPerformed();
+                }
+            }
+        );
+
+        aboutItem.addActionListener(
+            new java.awt.event.ActionListener(){
+                public void actionPerformed(ActionEvent e){
+                    aboutActionPerformed();
+                }
+            }
+        );
+    }// end initComponents()
+
+    private void exitActionPerformed(){
+        frame.dispose();
     }
-}
+    public void aboutActionPerformed(){
+        JOptionPane.showMessageDialog(null, "Thanks for using my app!");
+    }
+}// end MyFirstGUIApp
