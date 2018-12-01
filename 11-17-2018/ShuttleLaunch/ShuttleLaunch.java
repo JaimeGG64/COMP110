@@ -1,3 +1,7 @@
+//Name: Jaime Garcia Garcia
+//Date: 11-17-2018
+//Application: Shuttle Launch
+//Purpose: To mimic a shuttle Launch
 class ShuttleLaunch{
     final static int SLEEP_TIME_MILLISECONDS = 1000;
     public static void main(String[] args) {
