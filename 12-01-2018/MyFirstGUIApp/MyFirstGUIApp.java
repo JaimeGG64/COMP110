@@ -32,8 +32,9 @@ public class MyFirstGUIApp{
         menuBar.add(helpMenu);
         
         //Show GUI
+        frame.setSize(740,540);
         frame.setJMenuBar(menuBar);
-        frame.pack();
+        //frame.pack();
         frame.setVisible(true);
     }
 }
