@@ -12,22 +12,24 @@ pop() 15 times (yes, 15)
 */
 class Driver{
     public static void main(String[] args){
-        Stack myStack = new Stack(15);
+        Stack myStack = new Stack(20);
         System.out.println("Is the stack empty? - " + myStack.isEmpty());
         myStack.pop();
-        
-        myStack.push("Sup");
-        myStack.push("Good Day");
-        myStack.push("Good morrow");
-        myStack.push("Konichiwa");
-        myStack.push("Hola");
-        myStack.push("Hey");
-        myStack.push("Hello");
-        myStack.push("Good Morning");
-        System.out.println("************************");
-        myStack.search(10);
+        for(int i = 0; i < 13; i++){
+            if(i % 2 == 0){
+                myStack.push("Hello - " + Integer.toString(i));
+            }
+            else{
+                myStack.push("Sup - " + Integer.toString(i));
+            }
+        }
+        myStack.search(8);
         myStack.peek();
-        // myStack.print();
-        // System.out.print(myStack);
+        System.out.println("Is the stack empty? - " + myStack.isEmpty());
+        myStack.pop();
+        for(int i = 0; i < 15;i++){
+            myStack.pop();
+        }
+        // System.out.println("Is the stack empty? - " + myStack.isEmpty());
     }
 }
