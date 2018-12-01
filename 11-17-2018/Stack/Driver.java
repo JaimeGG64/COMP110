@@ -30,6 +30,7 @@ class Driver{
         for(int i = 0; i < 15;i++){
             myStack.pop();
         }
+        myStack.print();
         // System.out.println("Is the stack empty? - " + myStack.isEmpty());
     }
 }
