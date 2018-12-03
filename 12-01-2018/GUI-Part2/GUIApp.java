@@ -76,32 +76,27 @@ public class GUIApp{
     }
 
     private void buildDesktop(){
-        desktop = new JDesktopPane()
-        {
+        desktop = new JDesktopPane() {
             @Override
-            protected void paintComponent(Graphics g)
-            {
+            protected void paintComponent(Graphics g) {
                 ImageIcon icon = new ImageIcon("images/csun_logo.png");
                 Image image = icon.getImage();
 
-                int x = 0;
-                int y = 0;
-
+                int x=0, y=0;
                 double imageWidth = image.getWidth(null);
                 double imageHeight = image.getHeight(null);
                 double screenWidth = getWidth();
                 double screenHeight = getHeight();
 
-                if(screenWidth != 0){
-                    x = (int)screenWidth / 2 - (int)imageWidth / 2;
+                if(screenWidth != 0) {
+                    x = (int)screenWidth  / 2 - (int)imageWidth  / 2;
                 }
-
-                if(screenHeight != 0){
-                    x = (int)screenHeight / 2 - (int)imageHeight / 2;
+                if(screenHeight != 0) {
+                    y = (int)screenHeight / 2 - (int)imageHeight / 2;
                 }
-
+                
                 g.drawImage(image, x, y, this);
-            }
+            }  
         };
     }// end buildDesktop
 
