@@ -1,14 +1,19 @@
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-
-//Menu Bar
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-
-//Side Pane
+// abstract window toolkit (awt)
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Cursor;
+
+// awt events
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
+
+// swing
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
@@ -22,11 +27,20 @@ import javax.swing.JLabel;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import javax.swing.ImageIcon;
+import javax.swing.JTree;
+import javax.swing.JInternalFrame;
+import javax.swing.SwingUtilities;
 
-//Menu Item Listeners
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JOptionPane;
+// swing event
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
+
+// swing tree
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.TreePath;
+
 
 public class GUIApp{
     //Member Variables
@@ -42,6 +56,7 @@ public class GUIApp{
     private JMenuItem exitItem;
     private JMenuItem aboutItem;
     private JSplitPane splitPane;
+    private JTree tree;
 
     //constructor
     public GUIApp(){
@@ -84,6 +99,8 @@ public class GUIApp{
         statusLabel = new JLabel();
         labelPanel = new JPanel();
 
+        scrollPane.getViewport().add(tree);
+
         //Set border, size and layout
         statusLabel.setBorder(BorderFactory.createLoweredBevelBorder());
         statusLabel.setMinimumSize(new Dimension(0,18));
@@ -103,7 +120,7 @@ public class GUIApp{
     }
 
     private void buildFrame(){
-        frame.setDefaultLookAndFeelDecorated(true);
+        // frame.setDefaultLookAndFeelDecorated(true);
         frame = new JFrame("GUI App");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
@@ -118,9 +135,65 @@ public class GUIApp{
 
     }
 
+    private void buildTree(){
+        DefaultMutableTreeNode root = new DefaultMutableTreeNode("Tools");
+        DefaultMutableTreeNode alg = new DefaultMutableTreeNode("Algorithms");
+        DefaultMutableTreeNode odd = new DefaultMutableTreeNode("Odd");
+        DefaultMutableTreeNode io = new DefaultMutableTreeNode("IO");
+        DefaultMutableTreeNode fileInfo = new DefaultMutableTreeNode("File Info");
+
+        alg.add(odd);
+        io.add(fileInfo);
+
+        root.add(alg);
+        root.add(io);
+
+        DefaultTreeModel treeModel = new DefaultTreeModel(root);
+        tree = new JTree(treeModel);
+    }
+
+    private void addTreeListeners(){
+        tree.addMouseListener(
+            new MouseAdapter() {
+                @Override
+                public void mousePressed(MouseEvent e) {
+                    int selRow = tree.getRowForLocation(e.getX(), e.getY());
+                    if(selRow != -1) {
+                        treeClicked();
+                    }          
+                }                       
+            }
+        );
+    }
+
+    private void treeClicked(){
+        DefaultMutableTreeNode node = (DefaultMutableTreeNode) tree.getLastSelectedPathComponent();
+
+        if(node != null && node.isLeaf()){
+            statusLabel.setText(node.toString() + "clicked.");
+            if(node.toString().equals("Odd")) {
+                //OddDialog od = OddDialog.getInstance();
+                //if(!od.isVisible()) { 
+                //   od.setVisible(true);
+                //   desktop.add(od);               
+                //}                       
+            }
+            else if(node.toString().equals("File Info")) {
+                //ReadDialog rd = ReadDialog.getInstance();
+                //if(!rd.isVisible()) { 
+                //   rd.setVisible(true);           
+                //  desktop.add(rd);
+                //} 
+            }
+    
+        }
+    }
+
     private void initComponents(){
         setLookAndFeel();
         buildDesktop();
+        buildTree();
+        addTreeListeners();
         buildMenu();
         addMenuListeners();
         buildPane();
