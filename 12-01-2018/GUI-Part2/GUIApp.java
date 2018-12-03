@@ -196,11 +196,11 @@ public class GUIApp{
         if(node != null && node.isLeaf()){
             statusLabel.setText(node.toString() + "clicked.");
             if(node.toString().equals("Odd")) {
-                //OddDialog od = OddDialog.getInstance();
-                //if(!od.isVisible()) { 
-                //   od.setVisible(true);
-                //   desktop.add(od);               
-                //}                       
+                OddDialog od = OddDialog.getInstance();
+                if(!od.isVisible()) { 
+                    od.setVisible(true);
+                    desktop.add(od);               
+                }                       
             }
             else if(node.toString().equals("File Info")) {
                 //ReadDialog rd = ReadDialog.getInstance();
