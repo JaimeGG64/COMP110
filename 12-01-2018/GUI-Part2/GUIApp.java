@@ -76,8 +76,34 @@ public class GUIApp{
     }
 
     private void buildDesktop(){
-        desktop = new JDesktopPane();
-    }
+        desktop = new JDesktopPane()
+        {
+            @Override
+            protected void paintComponent(Graphics g)
+            {
+                ImageIcon icon = new ImageIcon("images/csun_logo.png");
+                Image image = icon.getImage();
+
+                int x = 0;
+                int y = 0;
+
+                double imageWidth = image.getWidth(null);
+                double imageHeight = image.getHeight(null);
+                double screenWidth = getWidth();
+                double screenHeight = getHeight();
+
+                if(screenWidth != 0){
+                    x = (int)screenWidth / 2 - (int)imageWidth / 2;
+                }
+
+                if(screenHeight != 0){
+                    x = (int)screenHeight / 2 - (int)imageHeight / 2;
+                }
+
+                g.drawImage(image, x, y, this);
+            }
+        };
+    }// end buildDesktop
 
     private void buildMenu(){
         //build menu
@@ -127,7 +153,7 @@ public class GUIApp{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
         frame.setIconImage(Toolkit.getDefaultToolkit().getImage("images/csun.gif"));
-        
+
         frame.getContentPane().add(labelPanel, BorderLayout.SOUTH);
         frame.getContentPane().add(panel, BorderLayout.CENTER);
 
