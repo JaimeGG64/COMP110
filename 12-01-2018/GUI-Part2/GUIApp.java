@@ -120,11 +120,14 @@ public class GUIApp{
     }
 
     private void buildFrame(){
-        // frame.setDefaultLookAndFeelDecorated(true);
+
+        //Create a new frame
+        frame.setDefaultLookAndFeelDecorated(true);
         frame = new JFrame("GUI App");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
-
+        frame.setIconImage(Toolkit.getDefaultToolkit().getImage("images/csun.gif"));
+        
         frame.getContentPane().add(labelPanel, BorderLayout.SOUTH);
         frame.getContentPane().add(panel, BorderLayout.CENTER);
 
