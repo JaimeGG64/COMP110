@@ -49,7 +49,7 @@ public class GUIApp{
         statusLabel.setText("Initialization complete.");
     }
 
-    private void initComponents(){
+    private void setLookAndFeel(){
         try{
             UIManager.setLookAndFeel(
                 UIManager.getSystemLookAndFeelClassName()
@@ -58,31 +58,13 @@ public class GUIApp{
         catch (Exception e){
             e.printStackTrace();
         }
+    }
 
-
-        //new frame and title
-        frame.setDefaultLookAndFeelDecorated(true);
-        frame = new JFrame("GUI App");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new BorderLayout());
+    private void buildDesktop(){
         desktop = new JDesktopPane();
-        scrollPane = new JScrollPane();
-        statusLabel = new JLabel();
-        panel = new JPanel();
-        labelPanel = new JPanel();
+    }
 
-        //Set border, size and layout
-        labelPanel.setLayout(new BorderLayout());
-        statusLabel.setBorder(BorderFactory.createLoweredBevelBorder());
-        statusLabel.setMinimumSize(new Dimension(0,18));
-        statusLabel.setPreferredSize(new Dimension(0,18));
-
-        //add labe to GUI
-        /*
-        JLabel label = new JLabel("Hello World");
-        frame.getContentPane().add(label);
-        */
-
+    private void buildMenu(){
         //build menu
         menuBar = new JMenuBar();
         fileMenu = new JMenu("File");
@@ -93,28 +75,59 @@ public class GUIApp{
         helpMenu.add(aboutItem);
         menuBar.add(fileMenu);
         menuBar.add(helpMenu);
+    }
 
-        //set the panel
-        panel.setLayout(new BorderLayout());
+    private void buildPane(){
+        panel = new JPanel();
         splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
+        scrollPane = new JScrollPane();
+        statusLabel = new JLabel();
+        labelPanel = new JPanel();
+
+        //Set border, size and layout
+        statusLabel.setBorder(BorderFactory.createLoweredBevelBorder());
+        statusLabel.setMinimumSize(new Dimension(0,18));
+        statusLabel.setPreferredSize(new Dimension(0,18));
+
         splitPane.setOneTouchExpandable(true);
         splitPane.setDividerLocation(200);
         splitPane.setContinuousLayout(true);
-
         splitPane.add(desktop, JSplitPane.RIGHT);
         splitPane.add(scrollPane, JSplitPane.LEFT);
 
+        panel.setLayout(new BorderLayout());
         panel.add(splitPane, BorderLayout.CENTER);
+
         labelPanel.add(statusLabel, BorderLayout.CENTER);
+        labelPanel.setLayout(new BorderLayout());
+    }
+
+    private void buildFrame(){
+        frame.setDefaultLookAndFeelDecorated(true);
+        frame = new JFrame("GUI App");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new BorderLayout());
 
         frame.getContentPane().add(labelPanel, BorderLayout.SOUTH);
         frame.getContentPane().add(panel, BorderLayout.CENTER);
-        
+
         //Show GUI
         frame.setSize(740,540);
         frame.setJMenuBar(menuBar);
         frame.setVisible(true);
 
+    }
+
+    private void initComponents(){
+        setLookAndFeel();
+        buildDesktop();
+        buildMenu();
+        addMenuListeners();
+        buildPane();
+        buildFrame();
+    }// end initComponents()
+
+    private void addMenuListeners(){
         exitItem.addActionListener(
             new java.awt.event.ActionListener(){
                 public void actionPerformed(ActionEvent e){
@@ -130,11 +143,12 @@ public class GUIApp{
                 }
             }
         );
-    }// end initComponents()
+    }
 
     private void exitActionPerformed(){
         frame.dispose();
     }
+
     public void aboutActionPerformed(){
         JOptionPane.showMessageDialog(null, "Thanks for using my app!");
     }
