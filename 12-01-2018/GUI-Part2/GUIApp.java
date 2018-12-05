@@ -200,11 +200,16 @@ public class GUIApp{
         DefaultMutableTreeNode io = new DefaultMutableTreeNode("IO");
         DefaultMutableTreeNode fileInfo = new DefaultMutableTreeNode("File Info");
 
+        DefaultMutableTreeNode conversion = new DefaultMutableTreeNode("Conversion");
+        DefaultMutableTreeNode milesToMeters = new DefaultMutableTreeNode("Miles To Meters");
+
         alg.add(odd);
         io.add(fileInfo);
+        conversion.add(milesToMeters);
 
         root.add(alg);
         root.add(io);
+        root.add(conversion);
 
         DefaultTreeModel treeModel = new DefaultTreeModel(root);
         tree = new JTree(treeModel);
@@ -228,6 +233,13 @@ public class GUIApp{
                     rd.setVisible(true);           
                     desktop.add(rd);
                 } 
+            }
+            else if(node.toString().equals("Miles To Meters")) {
+                MilesToMeters od = MilesToMeters.getInstance();
+                if(!od.isVisible()) { 
+                    od.setVisible(true);
+                    desktop.add(od);               
+                }                       
             }
         }
     }
