@@ -231,6 +231,7 @@ public class GUIApp{
             }
         }
     }
+
     private void addTreeListeners(){
         tree.addMouseListener(
             new MouseAdapter() {
@@ -244,6 +245,4 @@ public class GUIApp{
             }
         );
     }
-
-    
 }// end GUIApp
