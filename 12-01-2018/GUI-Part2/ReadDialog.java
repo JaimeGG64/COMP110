@@ -152,7 +152,7 @@ class ReadDialog extends JInternalFrame {
         }
         });
         pack();
-        setBounds(25, 25, 700, 120);
+        setBounds(25, 25, 800, 120);
         setLocation(50, 50);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     } // end private constructor
