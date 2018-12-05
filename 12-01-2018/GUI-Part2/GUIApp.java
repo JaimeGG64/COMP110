@@ -202,10 +202,12 @@ public class GUIApp{
 
         DefaultMutableTreeNode conversion = new DefaultMutableTreeNode("Conversion");
         DefaultMutableTreeNode milesToMeters = new DefaultMutableTreeNode("Miles To Meters");
+        DefaultMutableTreeNode milesToKilometers = new DefaultMutableTreeNode("Miles To Kilometers");
 
         alg.add(odd);
         io.add(fileInfo);
         conversion.add(milesToMeters);
+        conversion.add(milesToKilometers);
 
         root.add(alg);
         root.add(io);
@@ -236,6 +238,13 @@ public class GUIApp{
             }
             else if(node.toString().equals("Miles To Meters")) {
                 MilesToMeters od = MilesToMeters.getInstance();
+                if(!od.isVisible()) { 
+                    od.setVisible(true);
+                    desktop.add(od);               
+                }                       
+            }
+            else if(node.toString().equals("Miles To Kilometers")) {
+                MilesToKilometers od = MilesToKilometers.getInstance();
                 if(!od.isVisible()) { 
                     od.setVisible(true);
                     desktop.add(od);               
