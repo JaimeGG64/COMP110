@@ -27,7 +27,7 @@ class MilesToMeters extends JInternalFrame {
         return instance;
     }
 
-    private void oddActionPerformed() {
+    private void MilesToMetersPerformed() {
         double input = 0;
         lbl2.setText("");
         try {
@@ -65,7 +65,7 @@ class MilesToMeters extends JInternalFrame {
         btn.addActionListener(
             new ActionListener(){
                 public void actionPerformed(ActionEvent e) {
-                    oddActionPerformed();
+                    MilesToMetersPerformed();
                 }
             }
         );
