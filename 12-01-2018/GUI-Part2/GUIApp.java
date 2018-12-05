@@ -59,16 +59,25 @@ public class GUIApp{
     private JTree tree;
 
     //constructor
-    public GUIApp(){
+    public GUIApp() {
         initComponents();
         statusLabel.setText("Initialization complete.");
     }
 
+    private void initComponents(){
+        setLookAndFeel();
+        buildDesktop();
+        buildTree();
+        addTreeListeners();
+        buildMenu();
+        addMenuListeners();
+        buildPane();
+        buildFrame();
+    }// end initComponents()
+
     private void setLookAndFeel(){
         try{
-            UIManager.setLookAndFeel(
-                UIManager.getSystemLookAndFeelClassName()
-            );
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         }
         catch (Exception e){
             e.printStackTrace();
@@ -113,6 +122,32 @@ public class GUIApp{
         menuBar.add(helpMenu);
     }
 
+    private void exitActionPerformed(){
+        frame.dispose();
+    }
+
+    public void aboutActionPerformed(){
+        JOptionPane.showMessageDialog(null, "Thanks for using my app!");
+    }
+
+    private void addMenuListeners(){
+        exitItem.addActionListener(
+            new java.awt.event.ActionListener() {
+                public void actionPerformed(ActionEvent e){
+                    exitActionPerformed();
+                }
+            }
+        );
+
+        aboutItem.addActionListener(
+            new java.awt.event.ActionListener() {
+                public void actionPerformed(ActionEvent e){
+                    aboutActionPerformed();
+                }
+            }
+        );
+    }
+
     private void buildPane(){
         panel = new JPanel();
         splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
@@ -153,10 +188,9 @@ public class GUIApp{
         frame.getContentPane().add(panel, BorderLayout.CENTER);
 
         //Show GUI
-        frame.setSize(740,540);
         frame.setJMenuBar(menuBar);
+        frame.setSize(740,540);
         frame.setVisible(true);
-
     }
 
     private void buildTree(){
@@ -176,6 +210,27 @@ public class GUIApp{
         tree = new JTree(treeModel);
     }
 
+    private void treeClicked(){
+        DefaultMutableTreeNode node = (DefaultMutableTreeNode) tree.getLastSelectedPathComponent();
+
+        if(node != null && node.isLeaf()){
+            statusLabel.setText(node.toString() + "clicked.");
+            if(node.toString().equals("Odd")) {
+                OddDialog od = OddDialog.getInstance();
+                if(!od.isVisible()) { 
+                    od.setVisible(true);
+                    desktop.add(od);               
+                }                       
+            }
+            else if(node.toString().equals("File Info")) {
+                ReadDialog rd = ReadDialog.getInstance();
+                if(!rd.isVisible()) { 
+                    rd.setVisible(true);           
+                    desktop.add(rd);
+                } 
+            }
+        }
+    }
     private void addTreeListeners(){
         tree.addMouseListener(
             new MouseAdapter() {
@@ -190,63 +245,5 @@ public class GUIApp{
         );
     }
 
-    private void treeClicked(){
-        DefaultMutableTreeNode node = (DefaultMutableTreeNode) tree.getLastSelectedPathComponent();
-
-        if(node != null && node.isLeaf()){
-            statusLabel.setText(node.toString() + "clicked.");
-            if(node.toString().equals("Odd")) {
-                OddDialog od = OddDialog.getInstance();
-                if(!od.isVisible()) { 
-                    od.setVisible(true);
-                    desktop.add(od);               
-                }                       
-            }
-            else if(node.toString().equals("File Info")) {
-                //ReadDialog rd = ReadDialog.getInstance();
-                //if(!rd.isVisible()) { 
-                //   rd.setVisible(true);           
-                //  desktop.add(rd);
-                //} 
-            }
     
-        }
-    }
-
-    private void initComponents(){
-        setLookAndFeel();
-        buildDesktop();
-        buildTree();
-        addTreeListeners();
-        buildMenu();
-        addMenuListeners();
-        buildPane();
-        buildFrame();
-    }// end initComponents()
-
-    private void addMenuListeners(){
-        exitItem.addActionListener(
-            new java.awt.event.ActionListener(){
-                public void actionPerformed(ActionEvent e){
-                    exitActionPerformed();
-                }
-            }
-        );
-
-        aboutItem.addActionListener(
-            new java.awt.event.ActionListener(){
-                public void actionPerformed(ActionEvent e){
-                    aboutActionPerformed();
-                }
-            }
-        );
-    }
-
-    private void exitActionPerformed(){
-        frame.dispose();
-    }
-
-    public void aboutActionPerformed(){
-        JOptionPane.showMessageDialog(null, "Thanks for using my app!");
-    }
 }// end GUIApp
