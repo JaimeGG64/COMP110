@@ -203,11 +203,13 @@ public class GUIApp{
         DefaultMutableTreeNode conversion = new DefaultMutableTreeNode("Conversion");
         DefaultMutableTreeNode milesToMeters = new DefaultMutableTreeNode("Miles To Meters");
         DefaultMutableTreeNode milesToKilometers = new DefaultMutableTreeNode("Miles To Kilometers");
+        DefaultMutableTreeNode weightOnTheMoon = new DefaultMutableTreeNode("Weight On the Moon");
 
         alg.add(odd);
         io.add(fileInfo);
         conversion.add(milesToMeters);
         conversion.add(milesToKilometers);
+        conversion.add(weightOnTheMoon);
 
         root.add(alg);
         root.add(io);
@@ -245,6 +247,13 @@ public class GUIApp{
             }
             else if(node.toString().equals("Miles To Kilometers")) {
                 MilesToKilometers od = MilesToKilometers.getInstance();
+                if(!od.isVisible()) { 
+                    od.setVisible(true);
+                    desktop.add(od);               
+                }                       
+            }
+            else if(node.toString().equals("Weight On the Moon")) {
+                WeightOnTheMoon od = WeightOnTheMoon.getInstance();
                 if(!od.isVisible()) { 
                     od.setVisible(true);
                     desktop.add(od);               
