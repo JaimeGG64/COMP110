@@ -198,6 +198,7 @@ public class GUIApp{
         DefaultMutableTreeNode alg = new DefaultMutableTreeNode("Algorithms");
         DefaultMutableTreeNode odd = new DefaultMutableTreeNode("Odd");
         DefaultMutableTreeNode io = new DefaultMutableTreeNode("IO");
+        DefaultMutableTreeNode generator = new DefaultMutableTreeNode("Generator");
         DefaultMutableTreeNode fileInfo = new DefaultMutableTreeNode("File Info");
 
         DefaultMutableTreeNode conversion = new DefaultMutableTreeNode("Conversion");
@@ -205,15 +206,20 @@ public class GUIApp{
         DefaultMutableTreeNode milesToKilometers = new DefaultMutableTreeNode("Miles To Kilometers");
         DefaultMutableTreeNode weightOnTheMoon = new DefaultMutableTreeNode("Weight On the Moon");
 
+        DefaultMutableTreeNode passwordGenerator = new DefaultMutableTreeNode("Password Generator");
+
         alg.add(odd);
         io.add(fileInfo);
         conversion.add(milesToMeters);
         conversion.add(milesToKilometers);
         conversion.add(weightOnTheMoon);
 
+        generator.add(passwordGenerator);
+
         root.add(alg);
         root.add(io);
         root.add(conversion);
+        root.add(generator);
 
         DefaultTreeModel treeModel = new DefaultTreeModel(root);
         tree = new JTree(treeModel);
@@ -254,6 +260,13 @@ public class GUIApp{
             }
             else if(node.toString().equals("Weight On the Moon")) {
                 WeightOnTheMoon od = WeightOnTheMoon.getInstance();
+                if(!od.isVisible()) { 
+                    od.setVisible(true);
+                    desktop.add(od);               
+                }                       
+            }
+            else if(node.toString().equals("Password Generator")) {
+                PasswordGenerator od = PasswordGenerator.getInstance();
                 if(!od.isVisible()) { 
                     od.setVisible(true);
                     desktop.add(od);               
