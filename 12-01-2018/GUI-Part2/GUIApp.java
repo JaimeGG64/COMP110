@@ -206,6 +206,7 @@ public class GUIApp{
         DefaultMutableTreeNode milesToKilometers = new DefaultMutableTreeNode("Miles To Kilometers");
         DefaultMutableTreeNode weightOnTheMoon = new DefaultMutableTreeNode("Weight On the Moon");
         DefaultMutableTreeNode dectoBinary = new DefaultMutableTreeNode("Decimal to Binary");
+        DefaultMutableTreeNode dectoHex = new DefaultMutableTreeNode("Decimal to Hex");
 
         DefaultMutableTreeNode passwordGenerator = new DefaultMutableTreeNode("Password Generator");
         DefaultMutableTreeNode randomPhoneNumber = new DefaultMutableTreeNode("Random Phone Number");
@@ -216,6 +217,7 @@ public class GUIApp{
         conversion.add(milesToKilometers);
         conversion.add(weightOnTheMoon);
         conversion.add(dectoBinary);
+        conversion.add(dectoHex);
 
         generator.add(passwordGenerator);
         generator.add(randomPhoneNumber);
@@ -285,6 +287,13 @@ public class GUIApp{
             }
             else if(node.toString().equals("Decimal to Binary")) {
                 DecToBinary od = DecToBinary.getInstance();
+                if(!od.isVisible()) { 
+                    od.setVisible(true);
+                    desktop.add(od);               
+                }                       
+            }
+            else if(node.toString().equals("Decimal to Hex")) {
+                DecToHex od = DecToHex.getInstance();
                 if(!od.isVisible()) { 
                     od.setVisible(true);
                     desktop.add(od);               
