@@ -207,6 +207,7 @@ public class GUIApp{
         DefaultMutableTreeNode weightOnTheMoon = new DefaultMutableTreeNode("Weight On the Moon");
 
         DefaultMutableTreeNode passwordGenerator = new DefaultMutableTreeNode("Password Generator");
+        DefaultMutableTreeNode randomPhoneNumber = new DefaultMutableTreeNode("Random Phone Number");
 
         alg.add(odd);
         io.add(fileInfo);
@@ -215,6 +216,7 @@ public class GUIApp{
         conversion.add(weightOnTheMoon);
 
         generator.add(passwordGenerator);
+        generator.add(randomPhoneNumber);
 
         root.add(alg);
         root.add(io);
@@ -267,6 +269,13 @@ public class GUIApp{
             }
             else if(node.toString().equals("Password Generator")) {
                 PasswordGenerator od = PasswordGenerator.getInstance();
+                if(!od.isVisible()) { 
+                    od.setVisible(true);
+                    desktop.add(od);               
+                }                       
+            }
+            else if(node.toString().equals("Random Phone Number")) {
+                RandomPhoneNumber od = RandomPhoneNumber.getInstance();
                 if(!od.isVisible()) { 
                     od.setVisible(true);
                     desktop.add(od);               
