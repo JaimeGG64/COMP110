@@ -34,14 +34,13 @@ class RandomPhoneNumber extends JInternalFrame {
             String generatedNumber = "";
             input = tf.getText();
             int length = input.length();
-            boolean checkIfNumbers = input.matches("[0-9]");
-            if(length == 3){
+            boolean checkIfNumbers = input.matches(".*\\d.*");
+            if(checkIfNumbers && length == 3){
                 for(int i = 0; i <= 7; i++){
                     generatedNumber = Integer.toString((int)(Math.random() * 9 + i)) + generatedNumber;
                 }
                 lbl2.setText( "(" + input + ")" + "-" + generatedNumber.substring(0,3) + "-" + generatedNumber.substring(4,8));
             }
-            // lbl2.setText(input + "-");
         }
         catch(Exception e) {
             JOptionPane.showMessageDialog(this, "Bad input! Try again.");
