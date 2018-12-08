@@ -3,7 +3,6 @@ class Singleton{
     private static Singleton instance = new Singleton();
 
     private Singleton(){
-        // System.out.println("Demo Singleton");
     }
     
     public void setValue(int value){
@@ -15,6 +14,7 @@ class Singleton{
     }
     
     public static Singleton getInstance(){
+        System.out.println("Singleton Demo");
         return instance;
     }
 }
