@@ -51,7 +51,7 @@ class DecToBinary extends JInternalFrame {
 
         tf = new JTextField(10);
         btn = new JButton("Covert");
-        lbl = new JLabel(": ");
+        lbl = new JLabel("Binary: ");
         lbl2 = new JLabel();
         upperPanel = new JPanel();
         lowerPanel = new JPanel();
