@@ -28,12 +28,18 @@ class DecToBinary extends JInternalFrame {
     }
 
     private void DecToBinaryPerformed() {
-        double input = 0;
+        int input = 0;
+        int temp;
+        String BinaryOutput = "";
         lbl2.setText("");
         try {
             input = Integer.parseInt(tf.getText());
-        
-            lbl2.setText(Double.toString(kilometers));
+            while(input > 0){
+                temp = input % 2;
+                BinaryOutput = BinaryOutput + "" + temp;
+                input = input / 2;
+            }
+            lbl2.setText(BinaryOutput);
         }
         catch(Exception e) {
             JOptionPane.showMessageDialog(this, "Bad input! Try again.");
