@@ -1,3 +1,7 @@
+//Name: Jaime Garcia Garcia
+//Date: 12-08-2018
+//Application: Singleton
+//Purpose: Learn about the Singleton Pattern
 class Driver {
     public static void main(String[] args) {
         Singleton sObj1;
